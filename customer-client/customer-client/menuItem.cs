@@ -49,3 +49,4 @@ namespace customer_client
             cost = this.itemCost;
         }
     }
+}
