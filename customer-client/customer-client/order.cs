@@ -16,14 +16,25 @@ namespace customer_client
     {
         int sessionID = 0;
         menuItem[] itemsOrdered;
+        int menuCount = 0;
 
         public order( int assignedID)
         {
             sessionID = assignedID;
         }
-        public void addItem(int orderId)
+        public void addItem(menuItem newItem)
         {
-
+            itemsOrdered[menuCount] = new menuItem(newItem);
+            menuCount = menuCount + 1;
         }
+        public void removeItem(int removingItem)
+        {
+            itemsOrdered[removingItem].updateStatusCode(4);
+            // need to add removing item possibly?
+            //maybe use arraylist in place of array for an easier list
+        }
+        
+
+
     }
 }
