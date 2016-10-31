@@ -17,6 +17,7 @@ namespace customer_client
         public string foodName;
         public string foodDescription;
         public decimal itemCost;
+        private int itemNumber;//the number given to the item in the order
         public int itemStatus;
         /*
          * status code 0: not initialized
@@ -32,11 +33,17 @@ namespace customer_client
         */
 
         /*Constructors*/
-        public menuItem(menuItem addingItem)
+        public menuItem(int itemNumber)
         {
+            this.itemNumber = itemNumber;
+        }
+        public menuItem(menuItem addingItem, int menuNumber)
+        {
+           // this.menuItem = addingItem; 
             setFoodName(addingItem.getFoodName());
             setDescription(addingItem.getDescription());
             setCost(addingItem.getItemCost());
+            itemNumber = menuNumber; 
         }
 
 
