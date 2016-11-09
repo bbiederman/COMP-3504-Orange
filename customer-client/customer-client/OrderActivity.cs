@@ -24,7 +24,7 @@ namespace customer_client
             base.OnCreate(savedInstanceState);
 
 
-            Xamarin.Forms.ListView menuListView = new Xamarin.Forms.ListView;
+            //Xamarin.Forms.ListView menuListView = new Xamarin.Forms.ListView;
 
             //ItemSource = testList;    
         }
