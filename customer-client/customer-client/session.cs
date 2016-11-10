@@ -113,7 +113,7 @@ namespace customer_client
 
 
 
-        public int close(string userName, int passWord) {
+        public int close() {
 
                 var total=0;
             foreach (customerList) {
@@ -130,5 +130,48 @@ namespace customer_client
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

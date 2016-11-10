@@ -9,11 +9,21 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace customer_client
 {
-    class menuItem
+    public class menuItem
     {
+
+
+
+        [PrimaryKey, AutoIncrement]
+
+
+        public int ID { get; set; } // auto set when isnerted to the db
+     
+
         public string foodName;
         public string foodDescription;
         public decimal itemCost;
@@ -33,6 +43,8 @@ namespace customer_client
         */
 
         /*Constructors*/
+
+
         public menuItem(int itemNumber)
         {
             this.itemNumber = itemNumber;
@@ -81,5 +93,20 @@ namespace customer_client
         {
             itemStatus = newStatusCode;
         }
+
+
+
+
+
+        public override string ToString() // called when object geven to list for default list display
+        {
+            return name;
+        }
+
+
+
+
+
+
     }
 }
