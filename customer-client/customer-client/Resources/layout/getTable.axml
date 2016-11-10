@@ -41,6 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/enterTableNumber"
             android:layout_centerHorizontal="true"
-            android:id="@+id/button1" />
+            android:id="@+id/tableSubmit" />
     </RelativeLayout>
 </LinearLayout>

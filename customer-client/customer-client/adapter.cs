@@ -17,12 +17,22 @@ using Android.Widget;
 
 namespace customer_client
 {
-    class adapter : BaseAdapter<menuItem> //the menu item type isnt working for some reason, simliar to <Student>
+    public class adapter : BaseAdapter<menuItem> //the menu item type isnt working for some reason, simliar to <menuItem>
     {
 
 
         private dataAccess data = dataAccess.getInstance();
         private Activity context;
+
+        public override int Count
+        {
+            get
+            {
+                throw new NotImplementedException();
+                //Maybe count later???
+            }
+        }
+
         // change from DataAccessLayer
 
 
@@ -34,12 +44,12 @@ namespace customer_client
 
 
 
-        //changing from Student
+        //changing from menuItem
         public override menuItem this[int position]
         {
             get
             {
-                return data.getAllStudentsOrdered().ElementAt<Student>(position);
+                return data.getAllItemOrdered().ElementAt<menuItem>(position);
             }
         }
 
@@ -57,7 +67,7 @@ namespace customer_client
         //get view 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            Student st = this[position];
+            menuItem st = this[position];
 
             if (convertView == null)
                 convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);

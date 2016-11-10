@@ -75,10 +75,7 @@ namespace customer_client
 		{
 			
 			// aapt resource value: 0x7f05000e
-			public const int addStudentButton = 2131034126;
-			
-			// aapt resource value: 0x7f050004
-			public const int button1 = 2131034116;
+			public const int addItemButton = 2131034126;
 			
 			// aapt resource value: 0x7f050007
 			public const int editText1 = 2131034119;
@@ -101,6 +98,9 @@ namespace customer_client
 			// aapt resource value: 0x7f050005
 			public const int imageView1 = 2131034117;
 			
+			// aapt resource value: 0x7f05000f
+			public const int itemListView = 2131034127;
+			
 			// aapt resource value: 0x7f05000c
 			public const int label = 2131034124;
 			
@@ -113,8 +113,8 @@ namespace customer_client
 			// aapt resource value: 0x7f050000
 			public const int relativeLayout1 = 2131034112;
 			
-			// aapt resource value: 0x7f05000f
-			public const int studentListView = 2131034127;
+			// aapt resource value: 0x7f050004
+			public const int tableSubmit = 2131034116;
 			
 			// aapt resource value: 0x7f050006
 			public const int textView1 = 2131034118;

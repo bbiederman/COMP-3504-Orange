@@ -9,12 +9,23 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace customer_client
 {
-    class menuItem
+    public class menuItem
     {
-        public string foodName;
+
+
+
+        [PrimaryKey,AutoIncrement]
+
+
+        public int ID { get; set; } // auto set when isnerted to the db
+
+
+
+        public string foodName { get; set; }
         public string foodDescription;
         public decimal itemCost;
         private int itemNumber;//the number given to the item in the order
@@ -33,17 +44,27 @@ namespace customer_client
         */
 
         /*Constructors*/
+
+        public menuItem() { } //needed for SQLite
+
+
         public menuItem(int itemNumber)
         {
             this.itemNumber = itemNumber;
         }
+
+        public menuItem(string itemName)
+        {
+            this.foodName = itemName;
+        }
+
         public menuItem(menuItem addingItem, int menuNumber)
         {
-           // this.menuItem = addingItem; 
+            // this.menuItem = addingItem; 
             setFoodName(addingItem.getFoodName());
             setDescription(addingItem.getDescription());
             setCost(addingItem.getItemCost());
-            itemNumber = menuNumber; 
+            itemNumber = menuNumber;
         }
 
 
@@ -81,5 +102,20 @@ namespace customer_client
         {
             itemStatus = newStatusCode;
         }
+
+
+
+
+
+        public override string ToString() // called when object geven to list for default list display
+        {
+            return foodName;
+        }
+
+
+
+
+
+
     }
-}
+}   

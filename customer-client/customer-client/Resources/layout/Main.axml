@@ -55,7 +55,7 @@
             android:src="@drawable/facebook2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button1"
+            android:layout_below="@id/login"
             android:layout_centerHorizontal="true"
             android:id="@+id/imageButton1" />
     </RelativeLayout>

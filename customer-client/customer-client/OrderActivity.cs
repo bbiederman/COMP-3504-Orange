@@ -9,8 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Views.InputMethods;
 
-using Xamarin.Forms;
+//using Xamarin.Forms;
 
 namespace customer_client
 {
@@ -21,7 +22,7 @@ namespace customer_client
         private ListView itemListView;
         private adapter stAdapter; // data adapter for stored items
 
-        private Button additemtButton;
+        private Button addItemButton;
         private EditText itemNameEditText;
 
 
@@ -35,7 +36,7 @@ namespace customer_client
 
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.homeScreen);
+            SetContentView(Resource.Layout.menuOrder);
             //avoid automaticaly appear of android keyboard when activitry starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
 
@@ -56,7 +57,7 @@ namespace customer_client
         private void loadViews()
         {
             itemListView = FindViewById<ListView>(Resource.Id.itemListView);
-            additemButton = FindViewById<Button>(Resource.Id.addItemButton);
+            addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
             itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
         }
 
@@ -72,10 +73,10 @@ namespace customer_client
             //set up addapter for list view 
             stAdapter = new adapter(this);
             itemListView.Adapter = stAdapter;
-            itemListView.FastScrollEnabled = true;
+            //itemListView.FastScrollEnabled = true;
 
-            menuListView.ItemClick += menuListView_ItemClick;
-            menuListView.ItemLongClick += menuListView_ItemLongClick;
+            //itemListView.ItemClick += itemListView_ItemClick;
+            //itemListView.ItemLongClick += itemListView_ItemLongClick;
         }
 
 
@@ -84,13 +85,13 @@ namespace customer_client
 
 
         //Will just display an alert of all the student info
-        private void menuListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void itemListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             menuItem selectedSt = stAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Menu Info");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.name);
+            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
             dialog.Show();
 
         }
@@ -101,17 +102,17 @@ namespace customer_client
 
 
         //Will ask if they want to remove the student
-        private void menuItemListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        private void itemListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            Student selectedSt = stAdapter[e.Position];
+            menuItem selectedSt = stAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.name);
+            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
             dialog.SetPositiveButton("Delete",
                 (senderAlert, args) =>
                 { // action for this button
-                    data.deleteStudentByID(selectedSt.ID);
+                    data.deleteItemByID(selectedSt.ID);
                     stAdapter.NotifyDataSetChanged();
                     Toast.MakeText(this, "The menu item has been deleted", ToastLength.Short).Show();
                 }
@@ -142,7 +143,7 @@ namespace customer_client
 
 
         //this hides the key board
-        private void hideKeyBoard(View element)
+        private void hideKeyBoard(Android.Views.View element)
         {
             InputMethodManager im = (InputMethodManager)GetSystemService(Context.InputMethodService);
             im.HideSoftInputFromWindow(element.WindowToken, 0);

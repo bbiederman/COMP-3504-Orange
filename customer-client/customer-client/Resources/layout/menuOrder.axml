@@ -19,7 +19,7 @@
         android:background="@android:drawable/editbox_background"
         android:layout_toRightOf="@id/label" />
     <Button
-        android:id="@+id/addStudentButton"
+        android:id="@+id/addItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nameEditText"
@@ -31,6 +31,6 @@
         android:minHeight="25px"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addStudentButton"
-        android:id="@+id/studentListView" />
+        android:layout_below="@id/addItemButton"
+        android:id="@+id/itemListView" />
 </RelativeLayout>

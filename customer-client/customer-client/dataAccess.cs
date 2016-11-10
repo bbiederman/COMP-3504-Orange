@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace customer_client
 {
@@ -81,32 +82,32 @@ namespace customer_client
             dbConnection.Insert(info);
         }
 
-        public Student geItemByID(int id)
+        public menuItem geItemByID(int id)
         {
-            return dbConnection.Get<Student>(id);
+            return dbConnection.Get<menuItem>(id);
         }
 
         public void deleteItemByID(int id)
         {
-            dbConnection.Delete<Student>(id);
+            dbConnection.Delete<menuItem>(id);
         }
 
-        public void updateItemInfo(Student info)
+        public void updateItemInfo(menuItem info)
         {
             dbConnection.Update(info);
         }
 
-        public List<Student> getAllItems()
+        public List<menuItem> getAllItems()
         {
-            //gets all elements in the Student table and packages it into a List
+            //gets all elements in the menuItem table and packages it into a List
             return new List<menuItem>(dbConnection.Table<menuItem>());
         }
 
 
         public List<menuItem> getAllItemOrdered()
         {
-            //gets all elements in the Student table and packages it into a List
-            return new List<menuItem>(dbConnection.Table<menuItem>().OrderBy(st => st.name));
+            //gets all elements in the menuItem table and packages it into a List
+            return new List<menuItem>(dbConnection.Table<menuItem>().OrderBy(st => st.foodName));
         }
     }
 }
