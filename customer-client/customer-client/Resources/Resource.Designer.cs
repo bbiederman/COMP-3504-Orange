@@ -74,6 +74,9 @@ namespace customer_client
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05000e
+			public const int addStudentButton = 2131034126;
+			
 			// aapt resource value: 0x7f050004
 			public const int button1 = 2131034116;
 			
@@ -98,11 +101,20 @@ namespace customer_client
 			// aapt resource value: 0x7f050005
 			public const int imageView1 = 2131034117;
 			
+			// aapt resource value: 0x7f05000c
+			public const int label = 2131034124;
+			
 			// aapt resource value: 0x7f05000a
 			public const int login = 2131034122;
 			
+			// aapt resource value: 0x7f05000d
+			public const int nameEditText = 2131034125;
+			
 			// aapt resource value: 0x7f050000
 			public const int relativeLayout1 = 2131034112;
+			
+			// aapt resource value: 0x7f05000f
+			public const int studentListView = 2131034127;
 			
 			// aapt resource value: 0x7f050006
 			public const int textView1 = 2131034118;
