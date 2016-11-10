@@ -25,7 +25,7 @@ namespace customer_client
         public void addItem(menuItem newItem)
         {
             menuCount = menuCount + 1;
-            itemsOrdered.Add(newItem(newItem, menuCount));
+            //itemsOrdered.Add(newItem(newItem, menuCount));
         }
         public void removeItem(int removingItem)
         {
@@ -33,7 +33,7 @@ namespace customer_client
             // need to add removing item possibly?
             //maybe use arraylist in place of array for an easier list
         }
-        public Array displayList()
+        /*public Array displayList()
         {
             String testDisplay = "";
             for (int i = 0; i < menuCount; i ++)
@@ -41,7 +41,7 @@ namespace customer_client
                 testDiplay = testDisplay + itemsOrdered.get(menuCount).getFoodName();
             }
             System.Out.println("test iterate of strings:" + testDisplay);
-        }
+        }*/
         
 
 
