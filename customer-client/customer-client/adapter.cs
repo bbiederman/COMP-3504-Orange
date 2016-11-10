@@ -28,8 +28,11 @@ namespace customer_client
         {
             get
             {
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
+                return data.getAllItems().Count;
+                //throw new InvalidOperationException();
                 //Maybe count later???
+                
             }
         }
 

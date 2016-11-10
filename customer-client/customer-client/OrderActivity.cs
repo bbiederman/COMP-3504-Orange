@@ -72,11 +72,15 @@ namespace customer_client
 
             //set up addapter for list view 
             stAdapter = new adapter(this);
+            //if (stAdapter is adapter)
+            //{
+             //   itemNameEditText.Text = "True";
+            //}
             itemListView.Adapter = stAdapter;
-            //itemListView.FastScrollEnabled = true;
+            itemListView.FastScrollEnabled = true;
 
-            //itemListView.ItemClick += itemListView_ItemClick;
-            //itemListView.ItemLongClick += itemListView_ItemLongClick;
+            itemListView.ItemClick += itemListView_ItemClick;
+            itemListView.ItemLongClick += itemListView_ItemLongClick;
         }
 
 
