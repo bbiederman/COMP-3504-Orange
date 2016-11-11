@@ -25,7 +25,7 @@ namespace customer_client
         private Button addItemButton;
         private EditText itemNameEditText;
 
-
+        private List<string> testFoodItems;
 
 
 
@@ -40,11 +40,29 @@ namespace customer_client
             //avoid automaticaly appear of android keyboard when activitry starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
 
+            
+
+            //ListView testListView = new ListView();
 
             loadViews();
-            connectActions();
+            //connectActions();
+
+            testFoodItems = new List<string>();
+            testFoodItems.Add("Pizza");
+            testFoodItems.Add("Burger");
+            testFoodItems.Add("Pop");
+            testFoodItems.Add("Water");
+
+            ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
+
+            itemListView.Adapter = theAdapter;
 
 
+            //itemListView.ItemsSource = new string[]
+            //{
+            //    "test",
+            //    "test2"
+            //};
 
             // Set our view from the "main" layout resource
             // SetContentView (Resource.Layout.Main);
@@ -57,8 +75,8 @@ namespace customer_client
         private void loadViews()
         {
             itemListView = FindViewById<ListView>(Resource.Id.itemListView);
-            addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
-            itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
+            //addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
+            //itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
         }
 
 
