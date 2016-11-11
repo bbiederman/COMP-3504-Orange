@@ -53,7 +53,7 @@ namespace customer_client
 
 
 
-        //loading the views kidney had a text file a button and a list view, this need to be changed to our view 
+        //loading the views kidney had a text field a button and a list view, this need to be changed to our view 
         private void loadViews()
         {
             itemListView = FindViewById<ListView>(Resource.Id.itemListView);
