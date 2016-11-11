@@ -9,17 +9,18 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Media;
 
 namespace customer_client
 {
-    [Activity(Label = "Activity1")]
-    public class Activity1 : Activity
+    [Activity(Label = "soundManager")]
+
+    public class soundManager : Activity
     {
+        MediaPlayer _player;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-
-            // Create your application here
+            _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
         }
     }
 }
