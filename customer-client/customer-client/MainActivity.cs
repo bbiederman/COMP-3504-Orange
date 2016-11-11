@@ -5,7 +5,7 @@ using System;
 
 namespace customer_client
 {
-    [Activity(Label = "customer_client", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Orange Order", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         private Button login;

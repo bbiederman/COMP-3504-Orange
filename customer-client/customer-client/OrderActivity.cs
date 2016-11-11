@@ -15,7 +15,7 @@ using Android.Views.InputMethods;
 
 namespace customer_client
 {
-    [Activity(Label = "Activity1")]
+    [Activity(Label = "Orange Menu")]
     public class OrderActivity : Activity
     {
         private dataAccess data = dataAccess.getInstance();
@@ -48,12 +48,22 @@ namespace customer_client
 
             loadViews();
 
+            /*
+            testFoodItems = new List<Tuple<string, int>>();
+            testFoodItems.Add(new Tuple<string, int>("Pizza", Resource.Drawable.Icon));
+            testFoodItems.Add(new Tuple<string, int>("Burger", Resource.Drawable.Icon));
+            testFoodItems.Add(new Tuple<string, int>("Pop", Resource.Drawable.Icon));
+            testFoodItems.Add(new Tuple<string, int>("Water", Resource.Drawable.Icon));
+            */
+
+
+            
             testFoodItems = new List<string>();
             testFoodItems.Add("Pizza");
             testFoodItems.Add("Burger");
             testFoodItems.Add("Pop");
             testFoodItems.Add("Water");
-
+            
 
             connectActions();
 
@@ -92,9 +102,12 @@ namespace customer_client
         {
             viewOrder.Click += ViewOrder_Click;
 
+            //Add image
+            //ArrayAdapter<Tuple<string, int>> theAdapter = new ArrayAdapter<Tuple<string, int>>(this, Android.Resource.Layout.ActivityListItem, testFoodItems);
+
+
             ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
 
-            
 
             itemListView.Adapter = theAdapter;
             itemListView.FastScrollEnabled = true;
@@ -134,7 +147,8 @@ namespace customer_client
         //Will just display an alert of all the student info
         private void itemListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            string message = testFoodItems[e.Position];
+            string message = testFoodItems[e.Position].ToString();
+            //string message = testFoodItems[e.Position];
             //public final static string EXTRA_MESSAGE = "com."
 
             /*var dialog = new AlertDialog.Builder(this);
