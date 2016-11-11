@@ -93,6 +93,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="menuItem.cs" />
     <Compile Include="order.cs" />
+    <Compile Include="OrderTableAct.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +111,7 @@
     <AndroidResource Include="Resources\layout\menuOrderBak.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\orderTable.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
