@@ -21,11 +21,13 @@ namespace customer_client
         private dataAccess data = dataAccess.getInstance();
         private ListView itemListView;
         private adapter stAdapter; // data adapter for stored items
+        private adapter theAdapter;
 
+        private Button viewOrder;
         private Button addItemButton;
         private EditText itemNameEditText;
 
-
+        private List<string> testFoodItems;
 
 
 
@@ -40,11 +42,30 @@ namespace customer_client
             //avoid automaticaly appear of android keyboard when activitry starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
 
+            
+
+            //ListView testListView = new ListView();
 
             loadViews();
+
+            testFoodItems = new List<string>();
+            testFoodItems.Add("Pizza");
+            testFoodItems.Add("Burger");
+            testFoodItems.Add("Pop");
+            testFoodItems.Add("Water");
+
+
             connectActions();
 
+            
 
+            
+
+            //itemListView.ItemsSource = new string[]
+            //{
+            //    "test",
+            //    "test2"
+            //};
 
             // Set our view from the "main" layout resource
             // SetContentView (Resource.Layout.Main);
@@ -53,12 +74,13 @@ namespace customer_client
 
 
 
-        //loading the views kidney had a text file a button and a list view, this need to be changed to our view 
+        //loading the views kidney had a text field a button and a list view, this need to be changed to our view 
         private void loadViews()
         {
             itemListView = FindViewById<ListView>(Resource.Id.itemListView);
-            addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
-            itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
+            viewOrder = FindViewById<Button>(Resource.Id.viewOrder);
+            //addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
+            //itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
         }
 
 
@@ -68,19 +90,40 @@ namespace customer_client
         // action delagation, setting new adapter and sting up the views
         private void connectActions()
         {
-            addItemButton.Click += AddItemButton_Click;
+            viewOrder.Click += ViewOrder_Click;
 
-            //set up addapter for list view 
-            stAdapter = new adapter(this);
-            //if (stAdapter is adapter)
-            //{
-             //   itemNameEditText.Text = "True";
-            //}
-            itemListView.Adapter = stAdapter;
+            ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
+
+            
+
+            itemListView.Adapter = theAdapter;
             itemListView.FastScrollEnabled = true;
 
             itemListView.ItemClick += itemListView_ItemClick;
             itemListView.ItemLongClick += itemListView_ItemLongClick;
+
+
+            //addItemButton.Click += AddItemButton_Click;
+
+
+            //set up addapter for list view 
+            //stAdapter = new adapter(this);
+            //if (stAdapter is adapter)
+            //{
+            //   itemNameEditText.Text = "True";
+            //}
+            //itemListView.Adapter = stAdapter;
+            //itemListView.FastScrollEnabled = true;
+
+            //itemListView.ItemClick += itemListView_ItemClick;
+            //itemListView.ItemLongClick += itemListView_ItemLongClick;
+        }
+
+        private void ViewOrder_Click(object sender, EventArgs e)
+        {
+            var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
+            //extras here
+            StartActivity(ordertableact);
         }
 
 
@@ -91,12 +134,32 @@ namespace customer_client
         //Will just display an alert of all the student info
         private void itemListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            menuItem selectedSt = stAdapter[e.Position];
+            string message = testFoodItems[e.Position];
+            //public final static string EXTRA_MESSAGE = "com."
 
-            var dialog = new AlertDialog.Builder(this);
+            /*var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Menu Info");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
-            dialog.Show();
+            dialog.SetMessage(message);
+            dialog.Show();*/
+
+            //menuItem clickedItem = new menuItem(message);
+
+            var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
+
+
+            ordertableact.PutExtra("menuItemName", message);
+            StartActivity(ordertableact);
+
+            //data.addItem(clickedItem);
+            //theAdapter.NotifyDataSetChanged();
+
+
+            //menuItem selectedSt = theAdapter[e.Position];
+
+            //var dialog = new AlertDialog.Builder(this);
+            //dialog.SetTitle("Menu Info");
+            //dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
+            //dialog.Show();
 
         }
 
@@ -108,7 +171,8 @@ namespace customer_client
         //Will ask if they want to remove the student
         private void itemListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            menuItem selectedSt = stAdapter[e.Position];
+            /*
+            menuItem selectedSt = theAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
@@ -124,7 +188,7 @@ namespace customer_client
             dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
 
             dialog.Show();
-
+            */
 
 
 
