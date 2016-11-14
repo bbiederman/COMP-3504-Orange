@@ -16,7 +16,7 @@ using Android.Media;
 
 namespace customer_client
 {
-    [Activity(Label = "OrderTableAct")]
+    [Activity(Label = "Your Order")]
     public class OrderTableAct : Activity
     {
 

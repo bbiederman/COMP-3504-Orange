@@ -15,7 +15,7 @@ using Android.Views.InputMethods;
 
 namespace customer_client
 {
-    [Activity(Label = "Activity1")]
+    [Activity(Label = "Quick Byte Menu")]
     public class OrderActivity : Activity
     {
         private dataAccess data = dataAccess.getInstance();
@@ -55,6 +55,15 @@ namespace customer_client
             testFoodItems.Add("Water");
 
 
+
+            /*
+            testFoodItems = new List<Tuple<string, int>>();
+             testFoodItems.Add(new Tuple<string, int>("Pizza", Resource.Drawable.Icon));
+             testFoodItems.Add(new Tuple<string, int>("Burger", Resource.Drawable.Icon));
+             testFoodItems.Add(new Tuple<string, int>("Pop", Resource.Drawable.Icon));
+             testFoodItems.Add(new Tuple<string, int>("Water", Resource.Drawable.Icon));
+             */
+
             connectActions();
 
             
@@ -91,6 +100,9 @@ namespace customer_client
         private void connectActions()
         {
             viewOrder.Click += ViewOrder_Click;
+
+
+            //ArrayAdapter<Tuple<string, int>> theAdapter = new ArrayAdapter<Tuple<string, int>>(this, Android.Resource.Layout.ActivityListItem, testFoodItems);
 
             ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
 
