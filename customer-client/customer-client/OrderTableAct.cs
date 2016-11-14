@@ -10,7 +10,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
-using Android.Media;
 
 namespace customer_client
 {
@@ -37,14 +36,37 @@ namespace customer_client
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.menuOrder);
+            SetContentView(Resource.Layout.orderTable);
             //avoid automaticaly appear of android keyboard when activitry starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
 
             // Create your application here
-            
+            //Intent theIntent = getIntent();
+            //Bundle theBundle =
+
+
+            //if(Intent.GetStringExtra("menuItemName" == null) 
+            //{
+
+
+            //var dialog = new AlertDialog.Builder(this);
+            //dialog.SetTitle("Menu Info");
+            //dialog.SetMessage(menuItemName);
+            //dialog.Show();
+
+            //Activity currActvity = currentActi
+            //Activity currContext = CrossCurr
 
             loadViews();
+
+
+            rando();
+
+                
+                
+            
+
+            
             //connectActions();
 
             
@@ -52,10 +74,23 @@ namespace customer_client
 
         }
 
+        private void rando()
+        {
+            if (Intent.HasExtra("menuItemName"))
+            {
+                string menuItemName = Intent.GetStringExtra("menuItemName");
 
 
+                stAdapter = new adapter(this);
+                itemTable.Adapter = stAdapter;
+                itemTable.FastScrollEnabled = true;
+                data.addItem(new menuItem(menuItemName));
+                stAdapter.NotifyDataSetChanged();
 
-
+                itemTable.ItemClick += itemTable_ItemClick;
+                itemTable.ItemLongClick += itemTable_ItemLongClick;
+            }
+            }
 
         private void loadViews()
         {   //the list view with all data get from sqlite
@@ -74,13 +109,18 @@ namespace customer_client
         //Will just display an alert of all the student info
         private void itemTable_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            //var dialog1 = new AlertDialog.Builder(this);
+            //dialog1.SetTitle("Delete menu item");
+            //dialog1.SetMessage("ID is: ");
+            //dialog1.Show();
+            
             menuItem selectedSt = stAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Item Info");
             dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
             dialog.Show();
-
+            
         }
 
 
@@ -90,6 +130,12 @@ namespace customer_client
         private void itemTable_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             menuItem selectedSt = stAdapter[e.Position];
+            //selectedSt.ID = 1;
+
+            //var dialog1 = new AlertDialog.Builder(this);
+            //dialog1.SetTitle("Delete menu item");
+            //dialog1.SetMessage("ID is: ");
+            //dialog1.Show();
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
@@ -136,14 +182,12 @@ namespace customer_client
 
         }
 
-        MediaPlayer _player; //Soundplaying class variable
+
         //press the button plays the sound and provides the total, incomplete 
         private void finish() {
 
             dingbutton.Click += delegate
             {
-                _player = MediaPlayer.Create(this, Resource.Drawable.AlsoBasicDing);
-                _player.Start();
 
 
                 //play sound
