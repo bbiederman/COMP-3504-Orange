@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace customer_client
 {
-    [Activity(Label = "Let's Get You a Table")]
+    [Activity(Label = "getTableActivity")]
     public class GetTableActivity : Activity
     {
         private Button tableSubmit;

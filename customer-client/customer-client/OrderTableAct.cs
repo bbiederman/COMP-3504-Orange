@@ -14,7 +14,7 @@ using Android.Media;
 
 namespace customer_client
 {
-    [Activity(Label = "Review Order")]
+    [Activity(Label = "OrderTableAct")]
     public class OrderTableAct : Activity
     {
 
@@ -80,7 +80,6 @@ namespace customer_client
             if (Intent.HasExtra("menuItemName"))
             {
                 string menuItemName = Intent.GetStringExtra("menuItemName");
-                //Intent.RemoveExtra("menuItemName");
 
 
                 stAdapter = new adapter(this);
