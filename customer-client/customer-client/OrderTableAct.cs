@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
+using Android.Media;
 
 namespace customer_client
 {
@@ -183,12 +184,14 @@ namespace customer_client
 
         }
 
-
+        MediaPlayer _player; //Soundplaying class variable
         //press the button plays the sound and provides the total, incomplete 
         private void finish() {
 
             dingbutton.Click += delegate
             {
+                _player = MediaPlayer.Create(this, Resource.Drawable.AlsoBasicDing);
+                _player.Start();
 
 
                 //play sound
