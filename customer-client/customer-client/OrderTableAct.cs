@@ -11,6 +11,9 @@ using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
 
+
+using Android.Media;
+
 namespace customer_client
 {
     [Activity(Label = "OrderTableAct")]
@@ -89,8 +92,15 @@ namespace customer_client
 
                 itemTable.ItemClick += itemTable_ItemClick;
                 itemTable.ItemLongClick += itemTable_ItemLongClick;
+
             }
-            }
+
+            dingbutton.Click += delegate
+            {
+                finish();
+            };
+
+        }
 
         private void loadViews()
         {   //the list view with all data get from sqlite
@@ -182,21 +192,32 @@ namespace customer_client
 
         }
 
-
+        MediaPlayer _player; //Soundplaying class variable
         //press the button plays the sound and provides the total, incomplete 
         private void finish() {
 
-            dingbutton.Click += delegate
-            {
+            
+                var finishDialog = new AlertDialog.Builder(this);
+                finishDialog.SetTitle("Order Status");
+                finishDialog.SetMessage("Order Submitted.");
+              
 
 
+                //data.delete
+
+                finishDialog.Show();
+
+                total.Text = "$10.99";
+
+                _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
+                _player.Start();
                 //play sound
 
                 //calculate the total
 
 
 
-            };
+            
 
 
 
