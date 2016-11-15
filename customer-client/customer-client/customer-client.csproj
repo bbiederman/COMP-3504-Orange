@@ -99,7 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="detail.axml">
+    <AndroidResource Include="Resources\layout\detail.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <None Include="GettingStarted.Xamarin" />
