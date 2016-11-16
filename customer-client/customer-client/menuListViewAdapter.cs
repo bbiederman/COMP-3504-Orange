@@ -60,6 +60,7 @@ namespace customer_client
                 //Koush.UrlImageViewHelper.SetUrlDrawable(imageView,
                 //  url, Resource.Drawable.Placeholder);
                 // = UIImage.FromBundle();
+                imageView.SetImageResource(Resource.Drawable.Icon);
             }
             return view;
         }
