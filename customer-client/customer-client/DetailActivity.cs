@@ -29,9 +29,9 @@ namespace customer_client
 
         //Extra Name Constants
         private const string ENAME = "menuItemName";
-        private const String EDESCRIPTION = "foodDescription";
-        private const String EIMAGE = "itemImage";
-        private const String ECOST = "itemCost";
+        private const string EDESCRIPTION = "foodDescription";
+        private const string EIMAGE = "itemImage";
+        private const string ECOST = "itemCost";
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -101,6 +101,7 @@ namespace customer_client
 
         }
 
+
         // action delagation, setting new adapter and sting up the views
         /*
         private void connectActions()
@@ -135,7 +136,10 @@ namespace customer_client
         }
         */
 
-        //Jordans Code
+        /*
+         * Jordans Code - Adds the item, & start 'OrderTableAct'
+         *                Slightly modified, removed parts used for the list, since they're not required here
+         */
         private void AddButton_Click(object sender, EventArgs e)
         {
             data.addItem(item);    //updated item info
