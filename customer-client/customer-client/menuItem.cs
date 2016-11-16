@@ -48,6 +48,23 @@ namespace customer_client
         public menuItem() { } //needed for SQLite
 
 
+        public menuItem(string name,string desc,decimal cost,int num,string url) {
+            this.foodName = name;
+            this.foodDescription = desc;
+            this.itemCost = cost;
+            this.itemNumber = num;
+            this.imageurl = url;
+
+            
+
+
+
+        }
+
+
+
+
+
         public menuItem(int itemNumber)
         {
             this.itemNumber = itemNumber;
