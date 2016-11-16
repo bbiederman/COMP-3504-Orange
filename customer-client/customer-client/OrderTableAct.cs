@@ -105,7 +105,8 @@ namespace customer_client
 
             dingbutton.Click += delegate
             {
-                finish();
+                completeOrder();
+                Finish();
             };
 
         }
@@ -202,7 +203,7 @@ namespace customer_client
 
         MediaPlayer _player; //Soundplaying class variable
         //press the button plays the sound and provides the total, incomplete 
-        private void finish() {
+        private void completeOrder() {
 
             
                 var finishDialog = new AlertDialog.Builder(this);
