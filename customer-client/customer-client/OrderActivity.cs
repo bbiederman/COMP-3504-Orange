@@ -118,9 +118,9 @@ namespace customer_client
 
             ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
 
-            
 
-            itemListView.Adapter = theAdapter;
+
+            itemListView.Adapter =  theAdapter;
             itemListView.FastScrollEnabled = true;
 
             itemListView.ItemClick += itemListView_ItemClick;
