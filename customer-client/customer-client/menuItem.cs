@@ -30,6 +30,7 @@ namespace customer_client
         public decimal itemCost;
         private int itemNumber;//the number given to the item in the order
         public int itemStatus;
+        public int imageID;
         /*
          * status code 0: not initialized
          * status code 1: ordered
@@ -47,6 +48,20 @@ namespace customer_client
 
         public menuItem() { } //needed for SQLite
 
+
+
+
+        public menuItem(string name, string desc, decimal cost, int id ) {
+
+            this.foodName = name;
+            this.foodDescription = desc;
+            this.itemCost = cost;
+            this.imageID = id;
+
+
+
+
+        }
 
         public menuItem(int itemNumber)
         {
