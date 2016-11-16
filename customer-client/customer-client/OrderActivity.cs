@@ -68,14 +68,16 @@ namespace customer_client
             testFoodItems.Add("Fries");
 
 
-            menuItem pizza = new menuItem();
-            pizza.foodName = "Pizza";
-            pizza.foodDescription = "This is pizza";
-            pizza.imageurl = "burger";
+            menuItem burger = new menuItem();
+            burger.foodName = "Burger";
+            burger.foodDescription = "This is burger";
+            burger.imageurl = 2130837506;
+
+            
 
 
             menuList = new List<menuItem>();
-            menuList.Add(pizza);
+            menuList.Add(burger);
 
 
             /*
