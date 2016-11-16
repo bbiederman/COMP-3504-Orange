@@ -29,6 +29,8 @@ namespace customer_client
 
         private List<string> testFoodItems;
 
+        private List<menuItem> menuList;
+
 
 
         protected override void OnCreate(Bundle bundle)
@@ -66,6 +68,14 @@ namespace customer_client
             testFoodItems.Add("Fries");
 
 
+            menuItem pizza = new menuItem();
+            pizza.foodName = "Pizza";
+            pizza.foodDescription = "This is pizza";
+            pizza.imageurl = "burger";
+
+
+            menuList = new List<menuItem>();
+            menuList.Add(pizza);
 
 
             /*
@@ -118,9 +128,9 @@ namespace customer_client
 
             ArrayAdapter<string> theAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, testFoodItems);
 
-            
 
-            itemListView.Adapter = theAdapter;
+
+            itemListView.Adapter = new menuListViewAdapter(this, menuList);//theAdapter;
             itemListView.FastScrollEnabled = true;
 
             itemListView.ItemClick += itemListView_ItemClick;

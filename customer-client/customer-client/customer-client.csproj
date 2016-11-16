@@ -90,6 +90,7 @@
     <Compile Include="Detail.cs" />
     <Compile Include="dataAccess.cs" />
     <Compile Include="GetTableActivity.cs" />
+    <Compile Include="menuListViewAdapter.cs" />
     <Compile Include="OrderActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="menuItem.cs" />
@@ -113,6 +114,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\orderTable.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListViewItemRow.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -155,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="urlimageviewhelper-1.0.4.2\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
