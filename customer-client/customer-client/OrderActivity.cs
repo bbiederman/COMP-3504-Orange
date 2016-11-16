@@ -24,8 +24,8 @@ namespace customer_client
         private adapter theAdapter;
 
         private Button viewOrder;
-        private Button addItemButton;
-        private EditText itemNameEditText;
+        //private Button addItemButton;
+        //private EditText itemNameEditText;
 
         private List<string> testFoodItems;
 
@@ -48,11 +48,23 @@ namespace customer_client
 
             loadViews();
 
+
+            if (Intent.HasExtra("tableNumber"))
+            {
+                //GetTableActivity.Window.SetTitle
+                this.Title = "Table: " + Intent.GetStringExtra("tableNumber");
+
+            }
+
+
             testFoodItems = new List<string>();
             testFoodItems.Add("Pizza");
             testFoodItems.Add("Burger");
             testFoodItems.Add("Pop");
             testFoodItems.Add("Water");
+            testFoodItems.Add("Ice Cream");
+            testFoodItems.Add("Fries");
+
 
 
 
@@ -209,7 +221,7 @@ namespace customer_client
         }
 
 
-
+        /*
         private void AddItemButton_Click(object sender, EventArgs e)
         {
             data.addItem(new menuItem(itemNameEditText.Text));//change from addStudent
@@ -219,7 +231,7 @@ namespace customer_client
             //Hide keyboard after use for our text field
             hideKeyBoard(itemNameEditText);
 
-        }
+        }*/
 
 
         //this hides the key board

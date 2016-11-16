@@ -9,6 +9,7 @@ namespace customer_client
     public class MainActivity : Activity
     {
         private Button login;
+        private EditText emailAddress;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -26,6 +27,11 @@ namespace customer_client
             {
                 var gettableactivity = new Android.Content.Intent(this, typeof(GetTableActivity));
                 //extras here
+                char[] delimiterChar = { '@' };
+                string username = emailAddress.Text;
+                string[] usernameDelim = username.Split(delimiterChar);
+                gettableactivity.PutExtra("username", usernameDelim[0]);
+                //Console.WriteLine(usernameDelim);
                 StartActivity (gettableactivity);
             };
         }
@@ -33,6 +39,7 @@ namespace customer_client
         private void findViews()
         {
             login = FindViewById<Button>(Resource.Id.login);
+            emailAddress = FindViewById<EditText>(Resource.Id.emailAddress);
             //throw new NotImplementedException();
         }
     }

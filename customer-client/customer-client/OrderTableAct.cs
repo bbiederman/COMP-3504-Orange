@@ -82,7 +82,7 @@ namespace customer_client
             if (Intent.HasExtra("menuItemName"))
             {
                 string menuItemName = Intent.GetStringExtra("menuItemName");
-
+                this.Title = menuItemName;
 
                 stAdapter = new adapter(this);
                 itemTable.Adapter = stAdapter;
@@ -93,6 +93,14 @@ namespace customer_client
                 itemTable.ItemClick += itemTable_ItemClick;
                 itemTable.ItemLongClick += itemTable_ItemLongClick;
 
+            }
+            else
+            {
+                stAdapter = new adapter(this);
+                itemTable.Adapter = stAdapter;
+                itemTable.FastScrollEnabled = true;
+                itemTable.ItemClick += itemTable_ItemClick;
+                itemTable.ItemLongClick += itemTable_ItemLongClick;
             }
 
             dingbutton.Click += delegate

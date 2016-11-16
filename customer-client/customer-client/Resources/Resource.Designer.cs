@@ -47,22 +47,31 @@ namespace customer_client
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int BasicDing = 2130837504;
+			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int facebook = 2130837505;
+			public const int BasicDing = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int facebook2 = 2130837506;
+			public const int burger = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int citrus = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int lorem = 2130837508;
+			public const int facebook = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int lorem2 = 2130837509;
+			public const int facebook2 = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int Icon = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int lorem = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int lorem2 = 2130837512;
 			
 			static Drawable()
 			{
@@ -83,11 +92,11 @@ namespace customer_client
 			// aapt resource value: 0x7f050014
 			public const int dingBut = 2131034132;
 			
-			// aapt resource value: 0x7f050007
-			public const int editText1 = 2131034119;
-			
 			// aapt resource value: 0x7f050009
 			public const int editText2 = 2131034121;
+			
+			// aapt resource value: 0x7f050007
+			public const int emailAddress = 2131034119;
 			
 			// aapt resource value: 0x7f050003
 			public const int enterTableNumber = 2131034115;
