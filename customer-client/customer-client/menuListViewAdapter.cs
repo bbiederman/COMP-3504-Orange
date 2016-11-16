@@ -1,14 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+
 
 namespace customer_client
 {
@@ -54,13 +49,7 @@ namespace customer_client
 
             using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
             {
-                //string url = Android.Text.Html.FromHtml(item.imageurl).ToString();
-
-                //Download and display image
-                //Koush.UrlImageViewHelper.SetUrlDrawable(imageView,
-                //  url, Resource.Drawable.Placeholder);
-                // = UIImage.FromBundle();
-                imageView.SetImageResource(Resource.Drawable.Icon);
+                imageView.SetImageResource(item.imageurl);
             }
             return view;
         }

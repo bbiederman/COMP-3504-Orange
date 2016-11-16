@@ -38,7 +38,7 @@ namespace customer_client
          * status code 3: delivered to table
          * status code 4: canceled
          * */
-        public string imageurl;// possible method to get pictures for food
+        public int imageurl;// possible method to get pictures for food
         /*Features to add
          * -Add additional item costs (eg. add mushrooms and onions to a steak-> +0.80/possibly just add to item view
          * Array/arraylist of benefits such as vegan, gluten, ocean friendly etc
