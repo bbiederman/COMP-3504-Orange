@@ -12,13 +12,14 @@ using Android.Widget;
 
 namespace customer_client
 {
-    [Activity(Label = "Activity1")]
-    public class Activity1 : Activity
+    [Activity(Label = "DetailActity")]
+    public class DetailActivity : Activity
     {
         private TextView price;
         private TextView description;
         private Button addButton;
         private ImageView image;
+        private TextView name;
 
         private dataAccess data = dataAccess.getInstance();
         //private adapter stAdapter; // data adapter for stored items
@@ -27,7 +28,7 @@ namespace customer_client
         private menuItem item;
 
         //Extra Name Constants
-        private const String ENAME = "menuItemName";
+        private const string ENAME = "menuItemName";
         private const String EDESCRIPTION = "foodDescription";
         private const String EIMAGE = "itemImage";
         private const String ECOST = "itemCost";
@@ -37,13 +38,13 @@ namespace customer_client
         {
             base.OnCreate(savedInstanceState);
 
-            //Build menuItem object to populate fields
+            //Build menuItem object to populate fields. Should be replaced once menuItem gets a constructor update
             buildItem();
 
             //Set the main view
             SetContentView(Resource.Layout.detail);
 
-            //Connect resource elements
+            //SetUpElements
             connectElements();
 
             //avoid automaticaly appear of android keyboard when activitry starts
@@ -53,6 +54,9 @@ namespace customer_client
 
         /*
          * This builds a menu item out of the extras, to be used later to populate the fields for the activity
+         * 
+         * IMPORTANT: This method should be axed entirely as soon as menuItem gets a full constructor, & this functionality
+         *              should be covered by the constructor
          */
         private void buildItem()
         {
@@ -63,13 +67,13 @@ namespace customer_client
             //Adds food description
             if (Intent.HasExtra(EDESCRIPTION))
              {
-                String foodDescription = Intent.GetStringExtra(EDESCRIPTION);
+                string foodDescription = Intent.GetStringExtra(EDESCRIPTION);
                 item.setDescription(foodDescription);
              }
             //Adds item image
             if (Intent.HasExtra(EIMAGE))
             {
-                String itemImage = Intent.GetStringExtra(EIMAGE);
+                string itemImage = Intent.GetStringExtra(EIMAGE);
                 item.setDescription(itemImage);
             }
             //Adds item cost
@@ -83,13 +87,18 @@ namespace customer_client
         //Connects variables to the elements in the .axml
         private void connectElements()
         {
-            price = FindViewById<TextView>(Resource.Id.price);
-
+            //Connect variables to elements
             description = FindViewById<TextView>(Resource.Id.description);
-
             addButton = FindViewById<Button>(Resource.Id.addButton);
-
             image = FindViewById<ImageView>(Resource.Id.image);
+            price = FindViewById<TextView>(Resource.Id.price);
+            name = FindViewById<TextView>(Resource.Id.foodName);
+
+            //Update .xaml values with menuItem values
+            description.Text = item.getDescription();
+            price.Text = item.getItemCost().ToString();
+            name.Text = item.getFoodName();
+
         }
 
         // action delagation, setting new adapter and sting up the views
