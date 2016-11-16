@@ -86,7 +86,7 @@ namespace customer_client
             return itemStatus;
         }
         /*setters*/
-        public void setFoodName(String foodName)
+        public void setFoodName(string foodName)
         {
             foodName = this.foodName;
         }
