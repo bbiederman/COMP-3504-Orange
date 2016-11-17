@@ -49,7 +49,7 @@ namespace customer_client
 
             using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
             {
-                imageView.SetImageResource(item.imageurl);
+                imageView.SetImageResource(item.imageID);
             }
             return view;
         }
