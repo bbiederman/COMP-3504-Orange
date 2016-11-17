@@ -106,7 +106,13 @@ namespace customer_client
             dingbutton.Click += delegate
             {
                 completeOrder();
-                Finish();
+                Handler viewCompletionDetails = new Handler();
+                Action completeActivity = () =>
+                {
+                    Finish();
+                };
+
+                viewCompletionDetails.PostDelayed(completeActivity, 3000);
             };
 
         }
@@ -188,16 +194,14 @@ namespace customer_client
 
 
         //this method does the total sum of item ordered, incomplete
-        private void itemTotal() {
-             int tot = 0;
+        private decimal itemTotal() {
+             decimal orderTotal = 10.99m; //set up
 
             //loop into sqlite and get menuItem prices
 
 
-
-
-            total.Text = "your total is " + tot;
-
+           
+            return orderTotal;
 
         }
 
@@ -208,7 +212,7 @@ namespace customer_client
             
                 var finishDialog = new AlertDialog.Builder(this);
                 finishDialog.SetTitle("Order Status");
-                finishDialog.SetMessage("Order Submitted.");
+                finishDialog.SetMessage("Final Total:" + itemTotal() + " - Order Submitted.");
               
 
 
@@ -216,13 +220,13 @@ namespace customer_client
 
                 finishDialog.Show();
 
-                total.Text = "$10.99";
+                total.Text = "Current Total is" + itemTotal();
 
                 _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
                 _player.Start();
-                //play sound
+            //play sound
 
-                //calculate the total
+            //calculate the total
 
 
 
