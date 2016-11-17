@@ -110,8 +110,11 @@ namespace customer_client
 			// aapt resource value: 0x7f050014
 			public const int addItemButton = 2131034132;
 			
-			// aapt resource value: 0x7f050017
-			public const int dingBut = 2131034135;
+			// aapt resource value: 0x7f050016
+			public const int button1 = 2131034134;
+			
+			// aapt resource value: 0x7f050018
+			public const int dingBut = 2131034136;
 			
 			// aapt resource value: 0x7f05000c
 			public const int editText2 = 2131034124;
@@ -164,8 +167,8 @@ namespace customer_client
 			// aapt resource value: 0x7f05000b
 			public const int textView2 = 2131034123;
 			
-			// aapt resource value: 0x7f050016
-			public const int total = 2131034134;
+			// aapt resource value: 0x7f050017
+			public const int total = 2131034135;
 			
 			// aapt resource value: 0x7f050011
 			public const int viewOrder = 2131034129;
