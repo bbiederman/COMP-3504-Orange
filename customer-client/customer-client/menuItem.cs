@@ -26,6 +26,9 @@ namespace customer_client
 
 
         public string foodName { get; set; }
+
+
+
         public string foodDescription;
         public decimal itemCost;
         private int itemNumber;//the number given to the item in the order
@@ -100,6 +103,23 @@ namespace customer_client
         {
             return itemStatus;
         }
+        public int getImgId() {
+
+            
+            return imageID;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
         /*setters*/
         public void setFoodName(String foodName)
         {
@@ -117,7 +137,13 @@ namespace customer_client
         {
             itemStatus = newStatusCode;
         }
+        public void setImgId(int id)
+        {
+            imageID = id;
 
+           
+
+        }
 
 
 
