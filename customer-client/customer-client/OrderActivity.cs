@@ -222,12 +222,17 @@ namespace customer_client
 
 
 
-            
+
+
+            string thePrice = message.getItemCost().ToString();
 
             var detailAct = new Android.Content.Intent(this, typeof(DetailActivity));
 
-            detailAct.PutExtra("menuItemName", message.foodName);
-            detailAct.PutExtra("description", message.foodDescription);
+            detailAct.PutExtra("menuItemName", message.getFoodName());
+            detailAct.PutExtra("foodDescription", message.getDescription());
+            detailAct.PutExtra("itemImage", message.getImgId());
+            detailAct.PutExtra("itemCost", thePrice);
+
 
 
 
