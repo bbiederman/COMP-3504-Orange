@@ -9,6 +9,11 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:id="@+id/orderTable" />
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
     <EditText
         android:id="@+id/total"
         android:layout_width="fill_parent"
