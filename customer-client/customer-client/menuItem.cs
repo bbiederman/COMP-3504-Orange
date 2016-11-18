@@ -66,12 +66,12 @@ namespace customer_client
 
         }
 
-        public menuItem(int itemNumber)
+        public menuItem(int itemNumber) //Get rid of after orderTableAct moved to newest constructor
         {
             this.itemNumber = itemNumber;
         }
 
-        public menuItem(string itemName)
+        public menuItem(string itemName) //Get rid of after orderTableAct moved to newest constructor
         {
             this.foodName = itemName;
         }
