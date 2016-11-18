@@ -50,6 +50,8 @@ namespace customer_client
             //avoid automaticaly appear of android keyboard when activitry starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
 
+            addButton.Click += AddButton_Click;
+
         }
 
         /*
