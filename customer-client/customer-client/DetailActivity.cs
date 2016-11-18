@@ -175,6 +175,7 @@ namespace customer_client
             // Intent.PutExtra(ECOST, item.getItemCost().ToString());
 
             StartActivity(ordertableact);
+            Finish(); //returns to full menu after add
         }
     }
 }
