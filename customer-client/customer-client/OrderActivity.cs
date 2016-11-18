@@ -185,6 +185,13 @@ namespace customer_client
             var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
             //extras here
             StartActivity(ordertableact);
+
+
+
+
+
+           // var detailAct = new Android.Content.Intent(this, typeof(DetailActivity));
+           // StartActivity(detailAct);
         }
 
 
@@ -205,11 +212,27 @@ namespace customer_client
 
             //menuItem clickedItem = new menuItem(message);
 
-            var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
+            //var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
 
 
-            ordertableact.PutExtra("menuItemName", message);
-            StartActivity(ordertableact);
+            //ordertableact.PutExtra("menuItemName", message);
+            //StartActivity(ordertableact);
+
+
+
+
+
+            
+
+            var detailAct = new Android.Content.Intent(this, typeof(DetailActivity));
+
+            detailAct.PutExtra("menuItemName", message);
+            detailAct.PutExtra("menuItemName", message);
+
+            StartActivity(detailAct);
+
+
+
 
             //data.addItem(clickedItem);
             //theAdapter.NotifyDataSetChanged();
