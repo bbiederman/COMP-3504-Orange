@@ -10,10 +10,11 @@
         android:layout_weight="1"
         android:id="@+id/orderTable" />
     <Button
-        android:text="Button"
+        android:text="Return to Menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/backToMenu" />
+  
     <EditText
         android:id="@+id/total"
         android:layout_width="fill_parent"

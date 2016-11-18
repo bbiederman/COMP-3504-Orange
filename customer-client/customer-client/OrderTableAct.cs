@@ -25,6 +25,7 @@ namespace customer_client
         private adapter stAdapter; // data adapter for stored items
         private EditText total;
         private Button dingbutton;
+        private Button backToMenu;
         //private EditText itemNameEditText;
 
 
@@ -103,13 +104,19 @@ namespace customer_client
                 itemTable.ItemLongClick += itemTable_ItemLongClick;
             }
 
-            dingbutton.Click += delegate
+            backToMenu.Click += delegate //return to menu
             {
-                completeOrder();
-                Handler viewCompletionDetails = new Handler();
+                    Finish(); //complete activity
+               
+            };
+
+            dingbutton.Click += delegate //Finish buttoon press
+            {
+                completeOrder(); //runs method that dings, and posts message
+                Handler viewCompletionDetails = new Handler(); //handler & action built to delay completion of order by 3000ms
                 Action completeActivity = () =>
                 {
-                    Finish();
+                    Finish(); //complete activity
                 };
 
                 viewCompletionDetails.PostDelayed(completeActivity, 3000);
@@ -122,6 +129,8 @@ namespace customer_client
             itemTable = FindViewById<ListView>(Resource.Id.orderTable);
             //button plays a sound
             dingbutton = FindViewById<Button>(Resource.Id.dingBut);
+
+            backToMenu = FindViewById<Button>(Resource.Id.backToMenu);
             //calc total from item price
             total = FindViewById<EditText>(Resource.Id.total);
         }
