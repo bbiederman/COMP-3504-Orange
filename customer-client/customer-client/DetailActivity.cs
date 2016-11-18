@@ -67,28 +67,36 @@ namespace customer_client
 
 
 
-            //Creates a new menu item from the item name
-            item = new menuItem(Intent.GetStringExtra("menuItemName"));
 
+            //Creates a new menu item from the item name
+            //item = new menuItem(Intent.GetStringExtra("menuItemName"));
+            //decimal aprice = Intent.GetStringExtra(ECOST).ToDecimal(
+            item = new menuItem(Intent.GetStringExtra(ENAME), Intent.GetStringExtra(EDESCRIPTION), Convert.ToDecimal(Intent.GetStringExtra(ECOST)), Intent.GetIntExtra(EIMAGE, 10));
             //Adds additional information to the object where available
             //Adds food description
-            if (Intent.HasExtra(EDESCRIPTION))
+            /*if (Intent.HasExtra(EDESCRIPTION))
             {
-                string foodDescription = Intent.GetStringExtra(EDESCRIPTION);
+                var dialog = new AlertDialog.Builder(this);
+                dialog.SetTitle(Intent.GetStringExtra(EDESCRIPTION));
+                dialog.SetMessage("Here");
+                dialog.Show();
+
+                string foodDescription = Intent.GetStringExtra("foodDescription");
                 item.setDescription(foodDescription);
             }
             //Adds item image
             if (Intent.HasExtra(EIMAGE))
             {
-                string itemImage = Intent.GetStringExtra(EIMAGE);
-                item.setDescription(itemImage);
+                int itemImage = Intent.GetIntExtra(EIMAGE, 10);
+                //int intItemImage = Int32.Parse(itemImage);
+                item.setImgId(itemImage);
             }
             //Adds item cost
             if (Intent.HasExtra(ECOST))
             {
                 Decimal itemCost = decimal.Parse(Intent.GetStringExtra(ECOST));
                 item.setCost(itemCost);
-            }
+            }*/
         }
 
         //Connects variables to the elements in the .axml
@@ -102,10 +110,14 @@ namespace customer_client
             name = FindViewById<TextView>(Resource.Id.foodName);
 
             //Update .xaml values with menuItem values
+            string b = item.getDescription();
             description.Text = item.getDescription();
-            price.Text = item.getItemCost().ToString();
-            name.Text = item.getFoodName();
+            price.Text = "$" + item.getItemCost().ToString();
 
+
+            name.Text = item.getFoodName();
+            var imageView = FindViewById<ImageView>(Resource.Id.image);
+            imageView.SetImageResource(item.imageID);
         }
 
 
