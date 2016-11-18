@@ -154,7 +154,7 @@ namespace customer_client
             var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
 
             //Extras
-            Intent.PutExtra(ENAME,message);
+            Intent.PutExtra(ENAME, item.getFoodName());
             //Intent.PutExtra(ENAME, item.getFoodName());
             //Intent.PutExtra(EDESCRIPTION, item.getDescription());
             // Intent.PutExtra(EIMAGE, "placeholder");     //No image in menuItem object, placeholder string

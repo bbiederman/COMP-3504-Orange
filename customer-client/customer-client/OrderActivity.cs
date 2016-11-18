@@ -202,7 +202,7 @@ namespace customer_client
         //Will just display an alert of all the student info
         private void itemListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            string message = testFoodItems[e.Position];
+            menuItem message = menuList[e.Position];
             //public final static string EXTRA_MESSAGE = "com."
 
             /*var dialog = new AlertDialog.Builder(this);
