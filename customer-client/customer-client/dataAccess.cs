@@ -109,5 +109,10 @@ namespace customer_client
             //gets all elements in the menuItem table and packages it into a List
             return new List<menuItem>(dbConnection.Table<menuItem>().OrderBy(st => st.foodName));
         }
+        //test method for removal/clear of order
+        public void clearItems()
+        {
+            dbConnection.DeleteAll<menuItem>();
+        }
     }
 }

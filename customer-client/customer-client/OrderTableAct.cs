@@ -126,6 +126,7 @@ namespace customer_client
                         Handler viewCompletionDetails = new Handler(); //handler & action built to delay completion of order by 3000ms
                         Action completeActivity = () =>
                         {
+                            data.clearItems(); //clear items on order table
                             Finish(); //complete activity
                     };
 
