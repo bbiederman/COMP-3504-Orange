@@ -19,12 +19,6 @@ namespace customer_client
             this.list = _list;
         }
 
-        public menuListViewAdapter(Activity _context)
-        :base()
-        {
-            this.context = _context;
-        }
-
         public override int Count
         {
             get { return list.Count; }

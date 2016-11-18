@@ -23,7 +23,7 @@ namespace customer_client
         private dataAccess data = dataAccess.getInstance();
         private ListView itemTable;
         private adapter stAdapter; // data adapter for stored items
-        private adapter theAdapter;
+        private sqlMenuListViewAdapter theAdapter;
         private EditText total;
         private Button dingbutton;
         private Button backToMenu;
@@ -86,22 +86,22 @@ namespace customer_client
                 string menuItemName = Intent.GetStringExtra("menuItemName");
                 this.Title = menuItemName;
 
-                stAdapter = new adapter(this);
-                //theAdapter = new menuListViewAdapter(this);
+                //stAdapter = new adapter(this);
+                theAdapter = new sqlMenuListViewAdapter(this);
 
-                itemTable.Adapter = stAdapter;
+                itemTable.Adapter = theAdapter;
                 itemTable.FastScrollEnabled = true;
                 data.addItem(new menuItem(menuItemName));
-                stAdapter.NotifyDataSetChanged();
-
+                //stAdapter.NotifyDataSetChanged();
+                theAdapter.NotifyDataSetChanged();
                 itemTable.ItemClick += itemTable_ItemClick;
                 itemTable.ItemLongClick += itemTable_ItemLongClick;
 
             }
             else
             {
-                stAdapter = new adapter(this);
-                itemTable.Adapter = stAdapter;
+                theAdapter = new sqlMenuListViewAdapter(this);
+                itemTable.Adapter = theAdapter;
                 itemTable.FastScrollEnabled = true;
                 itemTable.ItemClick += itemTable_ItemClick;
                 itemTable.ItemLongClick += itemTable_ItemLongClick;
@@ -151,7 +151,7 @@ namespace customer_client
             //dialog1.SetMessage("ID is: ");
             //dialog1.Show();
             
-            menuItem selectedSt = stAdapter[e.Position];
+            menuItem selectedSt = theAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Item Info");
@@ -166,7 +166,7 @@ namespace customer_client
         //Will ask if they want to remove the item
         private void itemTable_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            menuItem selectedSt = stAdapter[e.Position];
+            menuItem selectedSt = theAdapter[e.Position];//stAdapter[e.Position];
             //selectedSt.ID = 1;
 
             //var dialog1 = new AlertDialog.Builder(this);
@@ -181,7 +181,7 @@ namespace customer_client
                 (senderAlert, args) =>
                 { // action for this button
                     data.deleteItemByID(selectedSt.ID);
-                    stAdapter.NotifyDataSetChanged();
+                    theAdapter.NotifyDataSetChanged();
                     Toast.MakeText(this, "The menu item has been deleted", ToastLength.Short).Show();
                 }
                 );
