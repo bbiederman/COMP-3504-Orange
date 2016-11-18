@@ -115,14 +115,28 @@ namespace customer_client
 
             dingbutton.Click += delegate //Finish buttoon press
             {
-                completeOrder(); //runs method that dings, and posts message
-                Handler viewCompletionDetails = new Handler(); //handler & action built to delay completion of order by 3000ms
-                Action completeActivity = () =>
-                {
-                    Finish(); //complete activity
-                };
+                var dialog = new AlertDialog.Builder(this);
+                dialog.SetTitle("Confirm");
+                dialog.SetMessage("Are you sure you want to submit your order?");
+                dialog.SetPositiveButton("Yes",//confirm that the user wants to submit the order
+                    (senderAlert, args) =>
+                    { // action for this button
 
-                viewCompletionDetails.PostDelayed(completeActivity, 3000);
+                        completeOrder(); //runs method that dings, and posts message
+                        Handler viewCompletionDetails = new Handler(); //handler & action built to delay completion of order by 3000ms
+                        Action completeActivity = () =>
+                        {
+                            Finish(); //complete activity
+                    };
+
+                        viewCompletionDetails.PostDelayed(completeActivity, 3000);
+                    }
+                    );
+            
+                dialog.SetNegativeButton("No", (senderAlert, args) => { }); //return to order
+
+                dialog.Show();
+                
             };
 
         }
