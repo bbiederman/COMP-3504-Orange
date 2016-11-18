@@ -226,8 +226,14 @@ namespace customer_client
 
             var detailAct = new Android.Content.Intent(this, typeof(DetailActivity));
 
-            detailAct.PutExtra("menuItemName", message);
-            detailAct.PutExtra("menuItemName", message);
+            detailAct.PutExtra("menuItemName", message.foodName);
+            detailAct.PutExtra("description", message.foodDescription);
+
+
+
+
+
+
 
             StartActivity(detailAct);
 
