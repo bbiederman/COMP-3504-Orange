@@ -23,6 +23,7 @@ namespace customer_client
         private dataAccess data = dataAccess.getInstance();
         private ListView itemTable;
         private adapter stAdapter; // data adapter for stored items
+        private adapter theAdapter;
         private EditText total;
         private Button dingbutton;
         private Button backToMenu;
@@ -86,6 +87,8 @@ namespace customer_client
                 this.Title = menuItemName;
 
                 stAdapter = new adapter(this);
+                //theAdapter = new menuListViewAdapter(this);
+
                 itemTable.Adapter = stAdapter;
                 itemTable.FastScrollEnabled = true;
                 data.addItem(new menuItem(menuItemName));
