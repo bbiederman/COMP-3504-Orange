@@ -19,6 +19,12 @@ namespace customer_client
             this.list = _list;
         }
 
+        public menuListViewAdapter(Activity _context)
+        :base()
+        {
+            this.context = _context;
+        }
+
         public override int Count
         {
             get { return list.Count; }
@@ -45,7 +51,12 @@ namespace customer_client
 
             menuItem item = this[position];
             view.FindViewById<TextView>(Resource.Id.Title).Text = item.foodName;
-            view.FindViewById<TextView>(Resource.Id.Description).Text = item.foodDescription;
+
+
+            string price = item.itemCost.ToString();
+
+
+            view.FindViewById<TextView>(Resource.Id.Description).Text = price;//item.foodDescription;
 
             using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
             {

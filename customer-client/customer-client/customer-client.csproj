@@ -98,6 +98,8 @@
     <Compile Include="OrderTableAct.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sql.cs" />
+    <Compile Include="sqlMenuListViewAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
