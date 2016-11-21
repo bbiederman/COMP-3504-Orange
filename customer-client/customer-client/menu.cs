@@ -28,12 +28,12 @@ namespace customer_client
 
         public int getRestaurantForeignKey()
         {
-            return this.restaurantForeignKey;
+            return restaurantForeignKey;
         }
 
         public List<menuItem> getMenu()
         {
-            return this.restaurantMenu;
+            return restaurantMenu;
         }
      }
     }
