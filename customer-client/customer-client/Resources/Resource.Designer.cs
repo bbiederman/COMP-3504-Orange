@@ -170,11 +170,11 @@ namespace customer_client
 			// aapt resource value: 0x7f050003
 			public const int price = 2131034115;
 			
-			// aapt resource value: 0x7f05001f
-			public const int radio_blue = 2131034143;
-			
 			// aapt resource value: 0x7f05001e
-			public const int radio_red = 2131034142;
+			public const int radio_R1 = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int radio_R2 = 2131034143;
 			
 			// aapt resource value: 0x7f050005
 			public const int relativeLayout1 = 2131034117;
