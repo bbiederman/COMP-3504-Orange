@@ -12,7 +12,28 @@ using Android.Widget;
 
 namespace customer_client
 {
-    class menu
+    public class menu
     {
+
+        public int restaurantForeignKey;
+        public List<menuItem> restaurantMenu;
+
+
+        public menu(int restForKey, List<menuItem> restMenu)
+        {
+            this.restaurantForeignKey = restForKey;
+            this.restaurantMenu = restMenu;
+        }
+
+
+        public int getRestaurantForeignKey()
+        {
+            return this.restaurantForeignKey;
+        }
+
+        public List<menuItem> getMenu()
+        {
+            return this.restaurantMenu;
+        }
+     }
     }
-}
