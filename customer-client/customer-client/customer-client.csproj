@@ -90,6 +90,7 @@
     <Compile Include="Detail.cs" />
     <Compile Include="dataAccess.cs" />
     <Compile Include="GetTableActivity.cs" />
+    <Compile Include="menu.cs" />
     <Compile Include="menuListViewAdapter.cs" />
     <Compile Include="OrderActivity.cs" />
     <Compile Include="MainActivity.cs" />
