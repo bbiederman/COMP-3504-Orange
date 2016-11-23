@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#31605b"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RadioButton
-            android:id="@+id/radio_R1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Restaurant1" />
-        <RadioButton
-            android:id="@+id/radio_R2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Restaurant2" />
-    </RadioGroup>
-    <Button
-        android:text="Select Restaurant"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/itemListView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/selectResBut" />
-</RelativeLayout>
+        android:id="@+id/relativeLayout1">
+        <Button
+            android:text="select res 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/res1But" />
+        <Button
+            android:text="select res 2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/res1But"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/res2But" />
+    </RelativeLayout>
+</LinearLayout>

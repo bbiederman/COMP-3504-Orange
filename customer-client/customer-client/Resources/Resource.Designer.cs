@@ -173,6 +173,12 @@ namespace customer_client
 			// aapt resource value: 0x7f050005
 			public const int relativeLayout1 = 2131034117;
 			
+			// aapt resource value: 0x7f05001e
+			public const int res1But = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int res2But = 2131034143;
+			
 			// aapt resource value: 0x7f050009
 			public const int tableSubmit = 2131034121;
 			
@@ -221,6 +227,9 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f030006
 			public const int orderTable = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int resSelect = 2130903047;
 			
 			static Layout()
 			{
