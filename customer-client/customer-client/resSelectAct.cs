@@ -15,34 +15,34 @@ namespace customer_client
     [Activity(Label = "Pick a Restaurant")]
     public class resSelectAct : Activity
     {
-        //private int resSelect1 = 1;
-        //private int resSelect2 = 2;
+        private int resSelect1 = 1;
+        private int resSelect2 = 2;
         private int resId;
-        private string tableNum;
+        private string tableNum = null;
+        private RadioButton radio_res1;
+        private RadioButton radio_res2;
+        private Button selectBut;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
+
+     
+
+
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.resSelect);
 
+
             if (Intent.HasExtra("tableNumber"))
             {
                 //GetTableActivity.Window.SetTitle
-                tableNum=Intent.GetStringExtra("tableNumber");
-
+                tableNum = Intent.GetStringExtra("tableNumber");
 
             }
 
 
-            
-
-
-            
-
-
-            RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
-            RadioButton radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
-            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+           loadViews();
 
             selectBut.Enabled = false;
 
@@ -59,12 +59,11 @@ namespace customer_client
 
 
                 //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
-                var theOrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
+                var OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
                 //extras here
 
-                theOrderAct.PutExtra("resId", resId);
-
-                StartActivity(theOrderAct);
+                OrderAct.PutExtra("resId", resId);
+                StartActivity(OrderAct);
             };
 
 
@@ -111,17 +110,11 @@ namespace customer_client
         }
 
 
-
-        //public void butFunction() {
-
-
-
-        //}
-
-
-
-
-
-        // Create your application here
-    }
+        private void loadViews()
+        {
+              radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
+radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
+selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+        }
+    
 }
