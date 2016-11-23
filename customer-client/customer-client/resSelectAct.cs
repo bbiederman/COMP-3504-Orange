@@ -10,19 +10,25 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace customer_client.Resources.layout
+namespace customer_client
 {
-    [Activity(Label = "Activity1")]
+    [Activity(Label = "Pick a Restaurant")]
     public class resSelectAct : Activity
     {
-        private int resSelect1 = 0;
-        private int resSelect2 = 0;
+        private int resSelect1 = 1;
+        private int resSelect2 = 2;
         private int resId;
+        private string tableNum = null;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
 
+            if (Intent.HasExtra("tableNumber"))
+            {
+                //GetTableActivity.Window.SetTitle
+                tableNum=Intent.GetStringExtra("tableNumber");
 
+            }
 
 
             base.OnCreate(savedInstanceState);
@@ -30,8 +36,12 @@ namespace customer_client.Resources.layout
             SetContentView(Resource.Layout.resSelect);
 
 
+            if (Intent.HasExtra("tableNumber"))
+            {
+                //GetTableActivity.Window.SetTitle
+                tableNum = Intent.GetStringExtra("tableNumber");
 
-
+            }
 
 
             RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
@@ -45,6 +55,28 @@ namespace customer_client.Resources.layout
             radio_res2.Click += RadioRes2Click;
 
 
+
+
+            selectBut.Click += delegate
+            {
+
+
+
+                //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
+                var OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
+                //extras here
+
+                OrderAct.PutExtra("resId", resId);
+                StartActivity(OrderAct);
+            };
+
+
+
+
+
+            butFunction();
+
+
            
 
 
@@ -54,10 +86,10 @@ namespace customer_client.Resources.layout
 
        public void RadioRes1Click(object sender, EventArgs e) {
 
-           this.resSelect1 = 1;
+           this.resId = 1;
+            Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
 
-
-
+            selectBut.Enabled = true;
 
 
 
@@ -69,10 +101,12 @@ namespace customer_client.Resources.layout
 
         public void RadioRes2Click(object sender, EventArgs e)
         {
-            this.resSelect2 = 2;
+            this.resId = 2;
+            Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
 
 
 
+            selectBut.Enabled = true;
 
 
 
@@ -81,7 +115,34 @@ namespace customer_client.Resources.layout
 
 
 
+        public void butFunction() {
 
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 
 
 

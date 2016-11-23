@@ -32,19 +32,19 @@ namespace customer_client
                     this.Title = "Hello, " + Intent.GetStringExtra("username");
 
                 }
-            
 
 
-                    findViews();
+            findViews();
             //clickHandler();
             tableSubmit.Click += delegate
             {
-                var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
+                //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
+                var resPick = new Android.Content.Intent(this, typeof(resSelectAct));
                 //extras here
 
                 string tableNumber = enterTableNumber.Text;
-                orderactivity.PutExtra("tableNumber", tableNumber);
-                StartActivity(orderactivity);
+                resPick.PutExtra("tableNumber", tableNumber);
+                StartActivity(resPick);
             };
         }
 
