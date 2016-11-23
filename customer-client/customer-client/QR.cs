@@ -33,9 +33,9 @@ namespace customer_client
             {
 
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-                intent.putExtra("SCAN_MODE", "QR_CODE_MODE"); // "PRODUCT_MODE for bar codes
+                intent.PutExtra("SCAN_MODE", "QR_CODE_MODE"); // "PRODUCT_MODE for bar codes
 
-                startActivityForResult(intent, 0);
+                StartActivityForResult(intent, 0);
 
             }
             catch (Exception e)
