@@ -44,7 +44,7 @@ namespace customer_client
 
                 string tableNumber = enterTableNumber.Text;
                 resPick.PutExtra("tableNumber", tableNumber);
-                StartActivity(resPick);
+                StartActivity (resPick);
             };
         }
 

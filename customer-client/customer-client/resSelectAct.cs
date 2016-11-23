@@ -46,7 +46,7 @@ namespace customer_client
 
             RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
             RadioButton radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
-            Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
+            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
 
             selectBut.Enabled = false;
 
@@ -74,7 +74,7 @@ namespace customer_client
 
 
 
-            butFunction();
+            //butFunction();
 
 
            
@@ -86,8 +86,8 @@ namespace customer_client
 
        public void RadioRes1Click(object sender, EventArgs e) {
 
-           this.resId = 1;
-            Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
+           resId = 1;
+            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
 
             selectBut.Enabled = true;
 
@@ -101,8 +101,8 @@ namespace customer_client
 
         public void RadioRes2Click(object sender, EventArgs e)
         {
-            this.resId = 2;
-            Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
+            resId = 2;
+            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
 
 
 
@@ -115,34 +115,11 @@ namespace customer_client
 
 
 
-        public void butFunction() {
+        //public void butFunction() {
 
 
 
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+        //}
 
 
 
