@@ -15,33 +15,29 @@ namespace customer_client
     [Activity(Label = "Pick a Restaurant")]
     public class resSelectAct : Activity
     {
-        private int resSelect1 = 1;
-        private int resSelect2 = 2;
+        //private int resSelect1 = 1;
+        //private int resSelect2 = 2;
         private int resId;
-        private string tableNum = null;
+        private string tableNum;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            base.OnCreate(savedInstanceState);
 
+            SetContentView(Resource.Layout.resSelect);
 
             if (Intent.HasExtra("tableNumber"))
             {
                 //GetTableActivity.Window.SetTitle
                 tableNum=Intent.GetStringExtra("tableNumber");
 
-            }
-
-
-            base.OnCreate(savedInstanceState);
-
-            SetContentView(Resource.Layout.resSelect);
-
-
-            if (Intent.HasExtra("tableNumber"))
-            {
-                //GetTableActivity.Window.SetTitle
-                tableNum = Intent.GetStringExtra("tableNumber");
 
             }
+
+
+            
+
+
+            
 
 
             RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
@@ -63,11 +59,12 @@ namespace customer_client
 
 
                 //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
-                var OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
+                var theOrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
                 //extras here
 
-                OrderAct.PutExtra("resId", resId);
-                StartActivity(OrderAct);
+                theOrderAct.PutExtra("resId", resId);
+
+                StartActivity(theOrderAct);
             };
 
 
