@@ -17,6 +17,7 @@ namespace customer_client.Resources.layout
     {
         private int resSelect1 = 0;
         private int resSelect2 = 0;
+        private int resId;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -32,9 +33,13 @@ namespace customer_client.Resources.layout
 
 
 
+
             RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
             RadioButton radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
             Button selectBut = FindViewById<RadioButton>(Resource.Id.selectResBut);
+
+            selectBut.Enabled = false;
+
 
             radio_res1.Click += RadioRes1Click;
             radio_res2.Click += RadioRes2Click;

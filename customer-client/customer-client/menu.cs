@@ -18,6 +18,7 @@ namespace customer_client
         public int restaurantForeignKey;
         public List<menuItem> restaurantMenu;
 
+        public menu() { } //needed for SQLite
 
         public menu(int restForKey, List<menuItem> restMenu)
         {

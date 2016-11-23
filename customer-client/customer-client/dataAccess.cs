@@ -61,6 +61,8 @@ namespace customer_client
         private void setUpTables()
         {
             dbConnection.CreateTable<menuItem>(); // example table being created
+            dbConnection.CreateTable<menu>();
+
         }
         /*=====================================================================
          * Initial connection to the database
@@ -81,6 +83,17 @@ namespace customer_client
         {
             dbConnection.Insert(info);
         }
+        
+        public void addMenu(menu aMenu)
+        {
+            dbConnection.Insert(aMenu);
+        }
+
+        public menu getMenu(int id)
+        {
+            return dbConnection.Get<menu>(id);
+        }
+
 
         public menuItem geItemByID(int id)
         {
