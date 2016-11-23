@@ -41,7 +41,7 @@ namespace customer_client
         {
             login = FindViewById<Button>(Resource.Id.login);
             emailAddress = FindViewById<EditText>(Resource.Id.emailAddress);
-            //throw new NotImplementedException();
+            //throw new NotImplementedException();//
         }
     }
 }
