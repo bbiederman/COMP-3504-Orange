@@ -22,6 +22,7 @@ namespace customer_client
         //Constructor
         public QR()
         {
+            captureQR();
 
         }
 
@@ -66,6 +67,8 @@ namespace customer_client
                     //handle cancel
                 }
             }
+
+            finishWithResult();
         }
 
         private void reaultParse(String input)
