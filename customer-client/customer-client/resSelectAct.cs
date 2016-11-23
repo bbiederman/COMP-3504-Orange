@@ -15,10 +15,8 @@ namespace customer_client
     [Activity(Label = "Pick a Restaurant")]
     public class resSelectAct : Activity
     {
-        private int resSelect1 = 1;
-        private int resSelect2 = 2;
         private int resId;
-        private string tableNum = null;
+        private string tableNum;
         private RadioButton radio_res1;
         private RadioButton radio_res2;
         private Button selectBut;
@@ -26,7 +24,7 @@ namespace customer_client
         {
 
 
-     
+
 
 
             base.OnCreate(savedInstanceState);
@@ -42,13 +40,13 @@ namespace customer_client
             }
 
 
-           loadViews();
+            loadViews();
 
-            selectBut.Enabled = false;
+            //selectBut.Enabled = false;
 
 
-            radio_res1.Click += RadioRes1Click;
-            radio_res2.Click += RadioRes2Click;
+            //radio_res1.Click += RadioRes1Click;
+            //radio_res2.Click += RadioRes2Click;
 
 
 
@@ -73,23 +71,24 @@ namespace customer_client
             //butFunction();
 
 
-           
+
 
 
 
         }
 
 
-       public void RadioRes1Click(object sender, EventArgs e) {
+        public void RadioRes1Click(object sender, EventArgs e)
+        {
 
-           resId = 1;
-            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+            resId = 1;
+            //Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
 
             selectBut.Enabled = true;
 
 
 
-         
+
         }
 
 
@@ -98,7 +97,7 @@ namespace customer_client
         public void RadioRes2Click(object sender, EventArgs e)
         {
             resId = 2;
-            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+            //Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
 
 
 
@@ -112,9 +111,10 @@ namespace customer_client
 
         private void loadViews()
         {
-              radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
-radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
-selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+            radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
+            radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
+            selectBut = FindViewById<Button>(Resource.Id.selectResBut);
         }
-    
+
+    }
 }

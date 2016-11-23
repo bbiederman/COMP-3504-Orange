@@ -31,8 +31,9 @@ namespace customer_client
                 string username = emailAddress.Text;
                 string[] usernameDelim = username.Split(delimiterChar);
                 gettableactivity.PutExtra("username", usernameDelim[0]);
-                //Console.WriteLine(usernameDelim);
+                Console.WriteLine(usernameDelim);
                 StartActivity (gettableactivity);
+                
             };
         }
 
