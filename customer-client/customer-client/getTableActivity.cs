@@ -46,7 +46,7 @@ namespace customer_client
             tableSubmit.Click += delegate
             {
                 //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
-                var resPick = new Android.Content.Intent(this, typeof(resSelectAct));
+                var resPick = new Android.Content.Intent(this, typeof(OrderActivity));
                 //extras here
 
                 string tableNumber = enterTableNumber.Text;
