@@ -74,11 +74,10 @@ namespace customer_client
             var OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
             //extras here
 
-            if(tableNum)
-
-
-
-            OrderAct.PutExtra("tableNumber", tableNum);
+            if (tableNum != null)
+            {
+                OrderAct.PutExtra("tableNumber", tableNum);
+            }
             OrderAct.PutExtra("resId", resId);
             StartActivity(OrderAct);
 

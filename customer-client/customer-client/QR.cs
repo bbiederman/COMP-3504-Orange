@@ -41,9 +41,9 @@ namespace customer_client
             catch (Exception e)
             {
 
-                Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
+                /*Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
-                startActivity(marketIntent);
+                startActivity(marketIntent);*/
 
             }
 
@@ -53,7 +53,7 @@ namespace customer_client
         //Recieves intent
         protected void onActivityResult(int requestCode, int resultCode, Intent data)
         {
-            super.onActivityResult(requestCode, resultCode, data);
+            /*super.onActivityResult(requestCode, resultCode, data);
             if (requestCode == 0)
             {
 
@@ -66,7 +66,7 @@ namespace customer_client
                 {
                     //handle cancel
                 }
-            }
+            }*/
 
             finishWithResult();
         }
@@ -74,10 +74,10 @@ namespace customer_client
         private void reaultParse(String input)
         {
             //Breaks the input string into 2 stings in array 'codes'
-            string[] codes = input.Split(",");
+            /*string[] codes = input.Split(",");
             //Converts strings into ints, & saves them to the global vars
             restID = Int32.Parse(codes[0].Text);
-            tableID = Int32.Parse(codes[1].Text);
+            tableID = Int32.Parse(codes[1].Text);*/
         }
 
         public int getRestID()
@@ -99,10 +99,10 @@ namespace customer_client
             //conData.putString("results", "Thanks Thanks");
             //intent.putExtras(conData);
 
-            intent.putExtras( "restID",getRestID() );
+            /*intent.putExtras( "restID",getRestID() );
             intent.putExtras("tableID", getTableID());
             setResult(RESULT_OK, intent);
-            finish();
+            finish();*/
         }
     }
 }
