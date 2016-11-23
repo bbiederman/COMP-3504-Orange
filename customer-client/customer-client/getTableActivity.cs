@@ -22,16 +22,23 @@ namespace customer_client
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.getTable);
-            
 
-                // Create your application here
 
-                if (Intent.HasExtra("username"))
-                {
-                    //GetTableActivity.Window.SetTitle
-                    this.Title = "Hello, " + Intent.GetStringExtra("username");
+            // Create your application here
 
-                }
+            if (Intent.HasExtra("username"))
+            {
+                //GetTableActivity.Window.SetTitle
+                this.Title = "Hello, " + Intent.GetStringExtra("username");
+
+            }
+            else {
+
+                this.Title = "Hello, Guest";
+
+
+
+            }
 
 
             findViews();

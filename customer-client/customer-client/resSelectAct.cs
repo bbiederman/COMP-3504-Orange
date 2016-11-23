@@ -19,16 +19,14 @@ namespace customer_client
         private int resSelect2 = 2;
         private int resId;
         private string tableNum = null;
+        private RadioButton radio_res1;
+        private RadioButton radio_res2;
+        private Button selectBut;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
 
-            if (Intent.HasExtra("tableNumber"))
-            {
-                //GetTableActivity.Window.SetTitle
-                tableNum=Intent.GetStringExtra("tableNumber");
-
-            }
+     
 
 
             base.OnCreate(savedInstanceState);
@@ -44,9 +42,7 @@ namespace customer_client
             }
 
 
-            RadioButton radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
-            RadioButton radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
-            Button selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+           loadViews();
 
             selectBut.Enabled = false;
 
@@ -114,17 +110,11 @@ namespace customer_client
         }
 
 
-
-        //public void butFunction() {
-
-
-
-        //}
-
-
-
-
-
-        // Create your application here
-    }
+        private void loadViews()
+        {
+              radio_res1 = FindViewById<RadioButton>(Resource.Id.radio_R1);
+radio_res2 = FindViewById<RadioButton>(Resource.Id.radio_R2);
+selectBut = FindViewById<Button>(Resource.Id.selectResBut);
+        }
+    
 }
