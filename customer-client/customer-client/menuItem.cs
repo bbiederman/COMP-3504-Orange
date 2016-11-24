@@ -153,10 +153,9 @@ namespace customer_client
             return foodName;
         }
 
-
-
-
-
-
+        //public static implicit operator string(menuItem v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }   

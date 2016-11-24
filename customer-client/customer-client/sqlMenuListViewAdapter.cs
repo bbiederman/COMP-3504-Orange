@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace customer_client
 {
-    public class sqlMenuListViewAdapter : BaseAdapter<menuItem>
+    public class sqlMenuListViewAdapter : BaseAdapter<string>
     {
         private dataAccess data = dataAccess.getInstance();
         Activity context;
@@ -36,9 +36,14 @@ namespace customer_client
             return position;
         }
 
-        public override menuItem this[int position]
+        public override string this[int position]
         {
-            get { return data.getAllItemOrdered().ElementAt<menuItem>(position); }
+            get {
+                string theTest = data.getAllItemOrdered().ElementAt<string>(position); 
+                //List<menuItem> something = data.getAllItemOrdered();
+                //theTest.ElementAt<menuItem>(position);
+                return theTest;//data.getAllItemOrdered().ElementAt<menuItem>(position);
+            }
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
@@ -50,18 +55,35 @@ namespace customer_client
             if (view == null)
                 view = context.LayoutInflater.Inflate(Resource.Layout.ListViewItemRow, parent, false);
 
-            menuItem item = this[position];
-            view.FindViewById<TextView>(Resource.Id.Title).Text = item.foodName;
+
+             
+
+            string item = this[position];
+
+            char[] delimiterChar = { '@' };
+            //string it = itemToInsert;
+            string[] itemDelim = item.Split(delimiterChar);
+            //gettableactivity.PutExtra("username", usernameDelim[0]);
+            string theName = itemDelim[0];
+            string theDesc = itemDelim[1];
+            string stringTheCost = itemDelim[2];
+            decimal theCost = System.Convert.ToDecimal(stringTheCost);
+            string stringTheId = itemDelim[3];
+            int theId = System.Int32.Parse(stringTheId);
+
+            view.FindViewById<TextView>(Resource.Id.Title).Text = theName;//item.foodName;
+            view.FindViewById<TextView>(Resource.Id.Description).Text = theDesc;//item.getDescription();//System.Convert.ToString(item.itemCost);//item.itemCost.ToString();
 
 
-            string price = "$" + item.itemCost.ToString();
+            //string price = "$" + item.itemCost.ToString();
 
 
-            view.FindViewById<TextView>(Resource.Id.Description).Text = price;//item.foodDescription;
+            //view.FindViewById<TextView>(Resource.Id.Description).Text = price;//item.foodDescription;
+            
 
             using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
             {
-                imageView.SetImageResource(item.imageID);
+                //imageView.SetImageResource(item.imageID);
             }
             return view;
         }

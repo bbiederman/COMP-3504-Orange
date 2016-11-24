@@ -72,6 +72,7 @@ namespace customer_client
             //item = new menuItem(Intent.GetStringExtra("menuItemName"));
             //decimal aprice = Intent.GetStringExtra(ECOST).ToDecimal(
             item = new menuItem(Intent.GetStringExtra(ENAME), Intent.GetStringExtra(EDESCRIPTION), Convert.ToDecimal(Intent.GetStringExtra(ECOST)), Intent.GetIntExtra(EIMAGE, 10));
+            //int a = 5;
             //Adds additional information to the object where available
             //Adds food description
             /*if (Intent.HasExtra(EDESCRIPTION))
@@ -161,14 +162,20 @@ namespace customer_client
          */
         private void AddButton_Click(object sender, EventArgs e)
         {
-            data.addItem(item);    //updated item info
-            //stAdapter.NotifyDataSetChanged(); //sends signal to list that it should refresh the data 
+            string itemToInsert = item.foodName + "@" + item.foodDescription + "@" + System.Convert.ToString(item.itemCost) + "@" + item.imageID.ToString();
 
+            
+
+
+
+
+            data.addItem(itemToInsert);    //updated item info
+            //stAdapter.NotifyDataSetChanged(); //sends signal to list that it should refresh the data 
             //Start new activity
             var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
 
             //Extras
-            Intent.PutExtra(ENAME, item.getFoodName());
+            //Intent.PutExtra(ENAME, item.getFoodName());
             //Intent.PutExtra(ENAME, item.getFoodName());
             //Intent.PutExtra(EDESCRIPTION, item.getDescription());
             // Intent.PutExtra(EIMAGE, "placeholder");     //No image in menuItem object, placeholder string

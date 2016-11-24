@@ -84,14 +84,14 @@ namespace customer_client
             if (Intent.HasExtra("menuItemName"))
             {
                 string menuItemName = Intent.GetStringExtra("menuItemName");
-                this.Title = menuItemName;
+                this.Title = "blah";//menuItemName;
 
                 //stAdapter = new adapter(this);
                 theAdapter = new sqlMenuListViewAdapter(this);
 
                 itemTable.Adapter = theAdapter;
                 itemTable.FastScrollEnabled = true;
-                data.addItem(new menuItem(menuItemName));
+                //data.addItem(new menuItem("Test", "Descrip", 12.1m, 4));//menuItemName));
                 //stAdapter.NotifyDataSetChanged();
                 theAdapter.NotifyDataSetChanged();
                 itemTable.ItemClick += itemTable_ItemClick;
@@ -166,12 +166,12 @@ namespace customer_client
             //dialog1.SetMessage("ID is: ");
             //dialog1.Show();
             
-            menuItem selectedSt = theAdapter[e.Position];
+            string selectedSt = theAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Item Info");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
-            dialog.Show();
+            //dialog.SetTitle("Item Info");
+            //dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName + "...." + selectedSt.foodDescription);
+            //dialog.Show();
             
         }
 
@@ -181,7 +181,7 @@ namespace customer_client
         //Will ask if they want to remove the item
         private void itemTable_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            menuItem selectedSt = theAdapter[e.Position];//stAdapter[e.Position];
+            string selectedSt = theAdapter[e.Position];//stAdapter[e.Position];
             //selectedSt.ID = 1;
 
             //var dialog1 = new AlertDialog.Builder(this);
@@ -189,7 +189,7 @@ namespace customer_client
             //dialog1.SetMessage("ID is: ");
             //dialog1.Show();
 
-            var dialog = new AlertDialog.Builder(this);
+           /* var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
             dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
             dialog.SetPositiveButton("Delete",
@@ -202,7 +202,7 @@ namespace customer_client
                 );
             dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
 
-            dialog.Show();
+            dialog.Show();*/
 
             
         }

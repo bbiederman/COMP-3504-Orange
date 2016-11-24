@@ -17,7 +17,7 @@ using Android.Widget;
 
 namespace customer_client
 {
-    public class adapter : BaseAdapter<menuItem> //the menu item type isnt working for some reason, simliar to <menuItem>
+    public class adapter : BaseAdapter<string> //the menu item type isnt working for some reason, simliar to <menuItem>
     {
 
 
@@ -48,11 +48,12 @@ namespace customer_client
 
 
         //changing from menuItem
-        public override menuItem this[int position]
+        public override string this[int position]
         {
             get
             {
-                return data.getAllItemOrdered().ElementAt<menuItem>(position);
+                string test = data.getAllItemOrdered().ElementAt<string>(position); 
+                return test;//data.getAllItemOrdered().ElementAt<menuItem>(position);
             }
         }
 
@@ -70,7 +71,7 @@ namespace customer_client
         //get view 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            menuItem st = this[position];
+            string st = this[position];
 
             if (convertView == null)
                 convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);

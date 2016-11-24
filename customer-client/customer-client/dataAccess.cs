@@ -16,6 +16,8 @@ namespace customer_client
     class dataAccess
     {
 
+        public override string() { } //needed for SQLite
+
         //Code for singlton design pattern setup
         private static dataAccess data = null;
         public static dataAccess getInstance()
@@ -60,7 +62,7 @@ namespace customer_client
          =====================================================================*/
         private void setUpTables()
         {
-            dbConnection.CreateTable<menuItem>(); // example table being created
+            dbConnection.CreateTable<string>(); // example table being created
             //dbConnection.CreateTable<menu>();
 
         }
@@ -79,9 +81,10 @@ namespace customer_client
             setUpTables(); // this happens very time.
         }
 
-        public void addItem(menuItem info)
+        public void addItem(string info)
         {
             dbConnection.Insert(info);
+            int b = 5;
         }
         
         /*public void addMenu(menu aMenu)
@@ -95,37 +98,37 @@ namespace customer_client
         }*/
 
 
-        public menuItem geItemByID(int id)
+        public string geItemByID(int id)
         {
-            return dbConnection.Get<menuItem>(id);
+            return dbConnection.Get<string>(id);
         }
 
         public void deleteItemByID(int id)
         {
-            dbConnection.Delete<menuItem>(id);
+            dbConnection.Delete<string>(id);
         }
 
-        public void updateItemInfo(menuItem info)
+        public void updateItemInfo(string info)
         {
             dbConnection.Update(info);
         }
 
-        public List<menuItem> getAllItems()
+        public List<string> getAllItems()
         {
             //gets all elements in the menuItem table and packages it into a List
-            return new List<menuItem>(dbConnection.Table<menuItem>());
+            return new List<string>(dbConnection.Table<string>());
         }
 
 
-        public List<menuItem> getAllItemOrdered()
+        public List<string> getAllItemOrdered()
         {
             //gets all elements in the menuItem table and packages it into a List
-            return new List<menuItem>(dbConnection.Table<menuItem>().OrderBy(st => st.foodName));
+            return new List<string>(dbConnection.Table<string>());//.OrderBy(st => st.foodName));
         }
         //test method for removal/clear of order
         public void clearItems()
         {
-            dbConnection.DeleteAll<menuItem>();
+            dbConnection.DeleteAll<string>();
         }
     }
 }
