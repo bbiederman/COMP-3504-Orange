@@ -26,8 +26,6 @@ namespace customer_client
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::customer_client.Resource.String.ApplicationName;
-			global::Xamarin.Forms.Platform.Resource.String.Hello = global::customer_client.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -80,10 +78,13 @@ namespace customer_client
 			public const int pizza = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int soda = 2130837515;
+			public const int QBLogo = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int water = 2130837516;
+			public const int soda = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int water = 2130837517;
 			
 			static Drawable()
 			{
