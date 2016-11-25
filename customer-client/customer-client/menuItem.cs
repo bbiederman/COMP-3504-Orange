@@ -58,10 +58,10 @@ namespace customer_client
 
 
 
-        public menuItem(string name, string cost,int id ) {
+        public menuItem(string name,string desc, string cost,int id ) {
 
             this.foodName = name;
-            //this.foodDescription = desc;
+            this.foodDescription = desc;
             this.itemCost = cost;
             this.imageID = id;
 
@@ -144,7 +144,7 @@ namespace customer_client
 
         public override string ToString() // called when object geven to list for default list display
         {
-            return foodName+":"+itemCost;
+            return "this is "+foodName+": $"+itemCost;
         }
 
 
