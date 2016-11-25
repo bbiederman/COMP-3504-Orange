@@ -17,6 +17,11 @@ namespace customer_client
     {
         private Button tableSubmit;
         private EditText enterTableNumber;
+        private Button qrSubmit;
+
+        public int restID { get; private set; }
+        public int tableID { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -42,6 +47,10 @@ namespace customer_client
 
 
             findViews();
+
+            //Init Barcode scanner
+            ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
+
             //clickHandler();
             tableSubmit.Click += delegate
             {
@@ -53,12 +62,42 @@ namespace customer_client
                 resPick.PutExtra("tableNumber", tableNumber);
                 StartActivity (resPick);
             };
+
+            qrSubmit.Click += delegate
+            {
+                qr();
+                Intent OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
+                //extras here
+
+                if (tableID != null)
+                {
+                    OrderAct.PutExtra("tableNumber", tableID);
+                }
+                OrderAct.PutExtra("resId", restID);
+                StartActivity(OrderAct);
+            };
+        }
+
+        private async void qr()
+        {
+            var scanPage = new ZXing.Mobile.MobileBarcodeScanner();
+            var result = await scanPage.Scan();
+            resultParse( result.ToString() );
+        }
+        private void resultParse(String input)
+        {
+            //Breaks the input string into 2 stings in array 'codes'
+            string[] codes = input.Split(',');
+            //Converts strings into ints, & saves them to the global vars
+            restID = Int32.Parse(codes[0]);
+            tableID = Int32.Parse(codes[1]);
         }
 
         private void findViews()
         {
             tableSubmit = FindViewById<Button>(Resource.Id.tableSubmit);
             enterTableNumber = FindViewById<EditText>(Resource.Id.enterTableNumber);
+            qrSubmit = FindViewById<Button>(Resource.Id.getGRCode);
         }
     }
 }

@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +37,7 @@ namespace customer_client
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                 intent.PutExtra("SCAN_MODE", "QR_CODE_MODE"); // "PRODUCT_MODE for bar codes
 
-                StartActivityForResult(intent, 0);
+                //StartActivityForResult(intent, 0);
 
             }
             catch (Exception e)
@@ -61,15 +63,13 @@ namespace customer_client
                 if (resultCode == /*RESULT_OK*/0)
                 {
                     String contents = data.GetStringExtra("SCAN_RESULT");
-                    resultParse(contents);
+                    //resultParse(contents);
                 }
                 if (resultCode == /*RESULT_CANCELED*/1)
                 {
                     //handle cancel
                 }
             }
-
-            finishWithResult();
         }
 
         private void resultParse(String input)
@@ -91,19 +91,5 @@ namespace customer_client
             return tableID;
         }
 
-        //Return to previous activity with resulting int codes
-        private void finishWithResult()
-        {
-            Intent intent = new Intent();
-
-            //Bundle conData = new Bundle();
-            //conData.putString("results", "Thanks Thanks");
-            //intent.putExtras(conData);
-
-            intent.PutExtra( "restID", getRestID() );
-            intent.PutExtra("tableID", getTableID());
-            SetResult(0, intent);
-            Finish();
-        }
     }
 }
