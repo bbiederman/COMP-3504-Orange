@@ -27,6 +27,7 @@ namespace customer_client
         private EditText total;
         private Button dingbutton;
         private Button backToMenu;
+        public decimal totalPrice;
         //private EditText itemNameEditText;
 
 
@@ -64,7 +65,10 @@ namespace customer_client
 
             loadViews();
 
+            string theTotal = Convert.ToString(itemTotal(0));
 
+
+            total.Text = theTotal;
             rando();
 
                 
@@ -198,11 +202,13 @@ namespace customer_client
                     data.deleteItemByID(selectedSt.ID);
                     theAdapter.NotifyDataSetChanged();
                     Toast.MakeText(this, "The menu item has been deleted", ToastLength.Short).Show();
+                    total.Text = Convert.ToString(itemTotal(1));
                 }
                 );
             dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
 
             dialog.Show();
+            
 
             
         }
@@ -219,11 +225,32 @@ namespace customer_client
 
 
 
-
+        //0 to add, 1 to subtract
         //this method does the total sum of item ordered, incomplete
-        private decimal itemTotal() {
+        private decimal itemTotal(int operation) {
 
-            //data.getAllItems
+            List<menuItem> totalList = data.getAllItems();
+
+            
+
+            for (int index = 0; index < totalList.Count; index++) {
+                string itemCostString = totalList[index].itemCost;
+
+                if (operation == 0) {
+                    totalPrice += Convert.ToDecimal(itemCostString);
+                }
+                else if (operation == 1)
+                {
+                    totalPrice -= Convert.ToDecimal(itemCostString);
+                }
+                
+                    }
+
+
+            string totalPriceBackToString = Convert.ToString(totalPrice);
+            //total.Text = totalPriceBackToString;
+
+            //int total = 
 
 
 
@@ -237,15 +264,12 @@ namespace customer_client
 
 
 
-
-
-             decimal orderTotal = 10.99m; //set up
-
-            //loop into sqlite and get menuItem prices
+             //decimal orderTotal = 10.99m; //set up
+                        //loop into sqlite and get menuItem prices
 
 
            
-            return orderTotal;
+            return totalPrice;
 
         }
 
@@ -253,10 +277,10 @@ namespace customer_client
         //press the button plays the sound and provides the total, incomplete 
         private void completeOrder() {
 
-            
+            decimal theTotal = itemTotal(0);
                 var finishDialog = new AlertDialog.Builder(this);
                 finishDialog.SetTitle("Order Status");
-                finishDialog.SetMessage("Final Total:" + itemTotal() + " - Order Submitted.");
+                finishDialog.SetMessage("Final Total:" + theTotal + " - Order Submitted.");
               
 
 
@@ -264,7 +288,7 @@ namespace customer_client
 
                 finishDialog.Show();
 
-                total.Text = "Current Total is" + itemTotal();
+                total.Text = "Current Total is" + theTotal;
 
                 _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
                 _player.Start();
