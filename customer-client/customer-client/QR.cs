@@ -41,6 +41,8 @@ namespace customer_client
             catch (Exception e)
             {
 
+                //This chunk is suposed to redirect the user to the store to get an appropriate QR app if they don't have one
+
                 /*Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
                 startActivity(marketIntent);*/
@@ -53,31 +55,30 @@ namespace customer_client
         //Recieves intent
         protected void onActivityResult(int requestCode, int resultCode, Intent data)
         {
-            /*super.onActivityResult(requestCode, resultCode, data);
             if (requestCode == 0)
             {
 
-                if (resultCode == RESULT_OK)
+                if (resultCode == /*RESULT_OK*/0)
                 {
-                    String contents = data.getStringExtra("SCAN_RESULT");
+                    String contents = data.GetStringExtra("SCAN_RESULT");
                     resultParse(contents);
                 }
-                if (resultCode == RESULT_CANCELED)
+                if (resultCode == /*RESULT_CANCELED*/1)
                 {
                     //handle cancel
                 }
-            }*/
+            }
 
             finishWithResult();
         }
 
-        private void reaultParse(String input)
+        private void resultParse(String input)
         {
             //Breaks the input string into 2 stings in array 'codes'
-            /*string[] codes = input.Split(",");
+            string[] codes = input.Split(',');
             //Converts strings into ints, & saves them to the global vars
-            restID = Int32.Parse(codes[0].Text);
-            tableID = Int32.Parse(codes[1].Text);*/
+            restID = Int32.Parse(codes[0]);
+            tableID = Int32.Parse(codes[1]);
         }
 
         public int getRestID()
@@ -99,10 +100,10 @@ namespace customer_client
             //conData.putString("results", "Thanks Thanks");
             //intent.putExtras(conData);
 
-            /*intent.putExtras( "restID",getRestID() );
-            intent.putExtras("tableID", getTableID());
-            setResult(RESULT_OK, intent);
-            finish();*/
+            intent.PutExtra( "restID", getRestID() );
+            intent.PutExtra("tableID", getTableID());
+            SetResult(0, intent);
+            Finish();
         }
     }
 }
