@@ -73,13 +73,13 @@ namespace customer_client
             burger.foodDescription = "This is burger";
             burger.imageID = 2130837506;*/
 
-            //Resource.Drawable.water;
+            //Resource.Drawable.soda;
 
             //decimal pizza1 = 9.56m;
             menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
-            menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
-            menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
-            menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
+            menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837515);
+            menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837517);
+            menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837518);
             menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
             //menuItem fries = new menuItem("Fries", "This is Fries", 1.50m, 2130837515);
             /*
