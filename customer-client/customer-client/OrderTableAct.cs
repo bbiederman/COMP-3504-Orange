@@ -170,7 +170,7 @@ namespace customer_client
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Item Info");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
+            dialog.SetMessage("order number: "+selectedSt.ID + " " + selectedSt.foodName + " " + selectedSt.itemCost);
             dialog.Show();
             
         }
@@ -191,7 +191,7 @@ namespace customer_client
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName);
+            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName+" "+selectedSt.itemCost);
             dialog.SetPositiveButton("Delete",
                 (senderAlert, args) =>
                 { // action for this button
@@ -222,6 +222,23 @@ namespace customer_client
 
         //this method does the total sum of item ordered, incomplete
         private decimal itemTotal() {
+
+            //data.getAllItems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
              decimal orderTotal = 10.99m; //set up
 
             //loop into sqlite and get menuItem prices
@@ -263,13 +280,7 @@ namespace customer_client
 
 
         }
-
-
-
-
-
-
-
+        
 
 
     }

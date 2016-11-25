@@ -69,9 +69,15 @@ namespace customer_client
 
 
             //Creates a new menu item from the item name
-            //item = new menuItem(Intent.GetStringExtra("menuItemName"));
+           // item = new menuItem(Intent.GetStringExtra("menuItemName"),Intent.GetStringExtra("itemCost"), Intent.GetIntExtra(EIMAGE, 10));
             //decimal aprice = Intent.GetStringExtra(ECOST).ToDecimal(
-            item = new menuItem(Intent.GetStringExtra(ENAME), Intent.GetStringExtra(EDESCRIPTION), Convert.ToDecimal(Intent.GetStringExtra(ECOST)), Intent.GetIntExtra(EIMAGE, 10));
+            item = new menuItem(Intent.GetStringExtra(ENAME), Intent.GetStringExtra(EDESCRIPTION), Intent.GetStringExtra(ECOST), Intent.GetIntExtra(EIMAGE, 10));
+            //item = new menuItem(Intent.GetStringExtra(ENAME), Intent.GetStringExtra(ECOST));
+
+
+            //item = new menuItem(Intent.GetStringExtra("menuItemName"), Intent.GetStringExtra(ECOST), Intent.GetIntExtra(EIMAGE, 10));
+
+
             //Adds additional information to the object where available
             //Adds food description
             /*if (Intent.HasExtra(EDESCRIPTION))
@@ -112,7 +118,7 @@ namespace customer_client
             //Update .xaml values with menuItem values
             string b = item.getDescription();
             description.Text = item.getDescription();
-            price.Text = "$" + item.getItemCost().ToString();
+            price.Text = "$" + item.itemCost;
 
 
             name.Text = item.getFoodName();
@@ -168,7 +174,8 @@ namespace customer_client
             var ordertableact = new Android.Content.Intent(this, typeof(OrderTableAct));
 
             //Extras
-            Intent.PutExtra(ENAME, item.getFoodName());
+            //Intent.PutExtra(ENAME, item.getFoodName());
+          
             //Intent.PutExtra(ENAME, item.getFoodName());
             //Intent.PutExtra(EDESCRIPTION, item.getDescription());
             // Intent.PutExtra(EIMAGE, "placeholder");     //No image in menuItem object, placeholder string

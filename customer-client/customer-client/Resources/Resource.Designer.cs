@@ -26,6 +26,9 @@ namespace customer_client
 		
 		public static void UpdateIdValues()
 		{
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::customer_client.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::customer_client.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::customer_client.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -119,6 +122,9 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f05001b
 			public const int backToMenu = 2131034139;
+			
+			// aapt resource value: 0x7f050020
+			public const int contentFrame = 2131034144;
 			
 			// aapt resource value: 0x7f050002
 			public const int description = 2131034114;
@@ -234,6 +240,12 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f030007
 			public const int resSelect = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int zxingscanneractivitylayout = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int zxingscannerfragmentlayout = 2130903049;
 			
 			static Layout()
 			{

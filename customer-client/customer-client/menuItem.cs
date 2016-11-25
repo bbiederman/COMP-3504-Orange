@@ -11,6 +11,9 @@ using Android.Views;
 using Android.Widget;
 using SQLite;
 
+
+
+
 namespace customer_client
 {
     public class menuItem
@@ -22,18 +25,19 @@ namespace customer_client
 
 
         public int ID { get; set; } // auto set when isnerted to the db
-
-
-
+        
         public string foodName { get; set; }
 
+        public string itemCost { get; set; }
+        public int imageID { get; set; }
 
 
         public string foodDescription;
-        public decimal itemCost;
+       // public decimal itemCost;
         private int itemNumber;//the number given to the item in the order
         public int itemStatus;
-        public int imageID;
+        
+        
         /*
          * status code 0: not initialized
          * status code 1: ordered
@@ -54,7 +58,7 @@ namespace customer_client
 
 
 
-        public menuItem(string name, string desc, decimal cost, int id ) {
+        public menuItem(string name,string desc, string cost,int id ) {
 
             this.foodName = name;
             this.foodDescription = desc;
@@ -76,15 +80,7 @@ namespace customer_client
             this.foodName = itemName;
         }
 
-        public menuItem(menuItem addingItem, int menuNumber)
-        {
-            // this.menuItem = addingItem; 
-            setFoodName(addingItem.getFoodName());
-            setDescription(addingItem.getDescription());
-            setCost(addingItem.getItemCost());
-            itemNumber = menuNumber;
-        }
-
+  
 
         /*getters*/
         public string getFoodName()
@@ -95,10 +91,11 @@ namespace customer_client
         {
             return foodDescription;
         }
-        public decimal getItemCost()
-        {
-            return itemCost;
-        }
+       
+
+
+
+
         public int getStatusCode()
         {
             return itemStatus;
@@ -129,10 +126,7 @@ namespace customer_client
         {
             foodDescription = this.foodDescription;
         }
-        public void setCost(decimal cost)
-        {
-            cost = this.itemCost;
-        }
+     
         public void updateStatusCode(int newStatusCode)
         {
             itemStatus = newStatusCode;
@@ -150,7 +144,7 @@ namespace customer_client
 
         public override string ToString() // called when object geven to list for default list display
         {
-            return foodName;
+            return "this is "+foodName+": $"+itemCost;
         }
 
 
