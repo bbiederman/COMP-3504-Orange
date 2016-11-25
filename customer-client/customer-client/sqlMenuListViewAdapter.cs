@@ -54,7 +54,7 @@ namespace customer_client
             view.FindViewById<TextView>(Resource.Id.Title).Text = item.foodName;
 
 
-            string price = "$" + item.itemCost.ToString();
+            string price = "$" + item.itemCost;
 
 
             view.FindViewById<TextView>(Resource.Id.Description).Text = price;//item.foodDescription;
