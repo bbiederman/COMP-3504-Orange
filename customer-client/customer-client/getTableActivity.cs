@@ -66,15 +66,6 @@ namespace customer_client
             qrSubmit.Click += delegate
             {
                 qr();
-                Intent OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
-                //extras here
-
-                if (tableID != null)
-                {
-                    OrderAct.PutExtra("tableNumber", tableID);
-                }
-                OrderAct.PutExtra("resId", restID);
-                StartActivity(OrderAct);
             };
         }
 
@@ -83,6 +74,16 @@ namespace customer_client
             var scanPage = new ZXing.Mobile.MobileBarcodeScanner();
             var result = await scanPage.Scan();
             resultParse( result.ToString() );
+
+            Intent OrderAct = new Android.Content.Intent(this, typeof(OrderActivity));
+            //extras here
+
+            if (tableID != null)
+            {
+                OrderAct.PutExtra("tableNumber", tableID.ToString());
+            }
+            OrderAct.PutExtra("resId", restID);
+            StartActivity(OrderAct);
         }
         private void resultParse(String input)
         {
