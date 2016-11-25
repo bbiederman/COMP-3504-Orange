@@ -81,7 +81,10 @@ namespace customer_client
 
         public void addItem(menuItem info)
         {
+           
+
             dbConnection.Insert(info);
+            //dbConnection.Insert(price);
         }
         
         /*public void addMenu(menu aMenu)

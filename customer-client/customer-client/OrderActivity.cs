@@ -59,13 +59,12 @@ namespace customer_client
             }
 
 
-            testFoodItems = new List<string>();
-            testFoodItems.Add("Pizza");
-            testFoodItems.Add("Burger");
-            testFoodItems.Add("Pop");
-            testFoodItems.Add("Water");
-            testFoodItems.Add("Ice Cream");
-            testFoodItems.Add("Fries");
+
+
+
+
+
+
 
 
             /*menuItem burger = new menuItem();
@@ -76,12 +75,46 @@ namespace customer_client
             //Resource.Drawable.water;
 
             //decimal pizza1 = 9.56m;
-            menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
-            menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
-            menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
-            menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
-            menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
-            //menuItem fries = new menuItem("Fries", "This is Fries", 1.50m, 2130837515);
+
+
+
+            /*
+
+           if (Intent.GetIntExtra("resId",1)==1)
+           {
+               menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
+               menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
+               menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
+               menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
+               menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
+               //menuItem fries = new menuItem("Fries", "This is Fries", 1.50m, 2130837515);
+           }
+           else {
+
+               menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
+               menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
+               menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
+               menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
+               menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
+
+
+           }
+           */
+
+           // menuItem burger = new menuItem("Burger:", "This is burger", 5.50m, 2130837506);
+          // menuItem pizza = new menuItem("Pizza:", "This is pizza", 9.56m, 2130837514);
+           //menuItem pop = new menuItem("Pop:", "This is pop", 1.99m, 2130837515);
+           //menuItem water = new menuItem("Water:", "This is water", 1.50m, 2130837516);
+          // menuItem icecream = new menuItem("Ice Cream:", "This is ice cream", 1.50m, 2130837510);
+
+
+            menuItem burger = new menuItem("Burger:", "5.50", 2130837506);
+            menuItem pizza = new menuItem("Pizza:", "5.00", 2130837514);
+            menuItem pop = new menuItem("Pop:", "1.99", 2130837515);
+            menuItem water = new menuItem("Water:", "2.00", 2130837516);
+            menuItem icecream = new menuItem("Ice Cream:", "100.00", 2130837510);
+
+
             /*
             //menuItem pizza = new menuItem();
             pizza.foodName = "Pizza";
@@ -161,7 +194,7 @@ namespace customer_client
             itemListView.FastScrollEnabled = true;
 
             itemListView.ItemClick += itemListView_ItemClick;
-            itemListView.ItemLongClick += itemListView_ItemLongClick;
+           // itemListView.ItemLongClick += itemListView_ItemLongClick;
 
 
             //addItemButton.Click += AddItemButton_Click;
@@ -224,7 +257,7 @@ namespace customer_client
 
 
 
-            string thePrice = message.getItemCost().ToString();
+            string thePrice = message.itemCost;
 
             var detailAct = new Android.Content.Intent(this, typeof(DetailActivity));
 

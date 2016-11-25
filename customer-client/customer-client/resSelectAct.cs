@@ -102,8 +102,8 @@ namespace customer_client
 
         private void loadViews()
         {
-            select_res1 = FindViewById<RadioButton>(Resource.Id.res1But);
-            select_res2 = FindViewById<RadioButton>(Resource.Id.res2But);
+            select_res1 = FindViewById<Button>(Resource.Id.res1But);
+            select_res2 = FindViewById<Button>(Resource.Id.res2But);
         }
 
     }
