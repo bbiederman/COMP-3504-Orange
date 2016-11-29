@@ -70,12 +70,14 @@ namespace customer_client
             string[,] list = new string[,] {};
 
             //Begin hard code
-            list[0,0] = "usr1";
-            list[0,1] = "pass1";
-            list[1,0] = "usr2";
-            list[1,1] = "pass2";
-            list[2,0] = "usr3";
-            list[2,1] = "pass3";
+            int i = 0;
+            while (i<6)
+            {
+                list[i,0] = String.Concat("user", i.ToString());
+                list[i,1] = String.Concat("pass", i.ToString());
+
+                i++;
+            }
             //End hard code
 
             return list;
