@@ -36,9 +36,14 @@
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/password"
         android:layout_marginLeft="54.0dp"
         android:layout_marginRight="54.0dp" />
+    <Button
+        android:text="Guest Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/guestLogin" />
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
