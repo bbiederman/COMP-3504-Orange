@@ -202,7 +202,7 @@ namespace customer_client
                     data.deleteItemByID(selectedSt.ID);
                     theAdapter.NotifyDataSetChanged();
                     Toast.MakeText(this, "The menu item has been deleted", ToastLength.Short).Show();
-                    total.Text = Convert.ToString(itemTotal(1));
+                    total.Text = Convert.ToString(negaTotal(selectedSt.itemCost));
                 }
                 );
             dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
@@ -212,7 +212,19 @@ namespace customer_client
 
             
         }
+        //Added new method to subtract from total
+        //paramter: string cost of "item to remove"
+        private decimal negaTotal(string valueToRemove)
+        {
+            decimal subtract = Convert.ToDecimal(valueToRemove);
+            List<menuItem> totalList = data.getAllItems();
 
+
+                totalPrice -=subtract;
+
+            return totalPrice;
+
+        }
 
         //this hides the key board
         private void hideKeyBoard(Android.Views.View element)
@@ -248,26 +260,8 @@ namespace customer_client
 
 
             string totalPriceBackToString = Convert.ToString(totalPrice);
-            //total.Text = totalPriceBackToString;
-
-            //int total = 
-
-
-
-
-
-
-
-
-
-
-
-
-
-             //decimal orderTotal = 10.99m; //set up
-                        //loop into sqlite and get menuItem prices
-
-
+            //decimal orderTotal = 10.99m; //set up
+            //loop into sqlite and get menuItem prices
            
             return totalPrice;
 
