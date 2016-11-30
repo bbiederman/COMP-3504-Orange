@@ -10,7 +10,7 @@ namespace customer_client
     {
         private Button login;
         private EditText emailAddress;
-        private Button password;
+        private EditText password;
         private Button guestLogin;
 
         protected override void OnCreate(Bundle bundle)
@@ -67,12 +67,13 @@ namespace customer_client
         private string[,] getValidUsers()
         {
             //Initialize 2D string array w/ [x,0]=usr & [x,1]=pass
-            string[,] list = new string[,] {};
+            string[,] list = new string[6,2];
 
             //Begin hard code
             int i = 0;
             while (i<6)
             {
+                //list[1, 0] = String.Concat("user1");
                 list[i,0] = String.Concat("user", i.ToString());
                 list[i,1] = String.Concat("pass", i.ToString());
 
@@ -98,7 +99,7 @@ namespace customer_client
         {
             login = FindViewById<Button>(Resource.Id.login);
             emailAddress = FindViewById<EditText>(Resource.Id.emailAddress);
-            password = FindViewById<Button>(Resource.Id.password);
+            password = FindViewById<EditText>(Resource.Id.password);
             guestLogin = FindViewById<Button>(Resource.Id.guestLogin);
             //throw new NotImplementedException();//
         }
