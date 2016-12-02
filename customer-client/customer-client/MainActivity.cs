@@ -38,6 +38,14 @@ namespace customer_client
                 {
                     submit(usr);
                 }
+                else
+                {
+                    //Tell the user that the login didn't work
+                    var dialog = new AlertDialog.Builder(this);
+                    dialog.SetTitle("Invalid Login");
+                    dialog.SetMessage("The username-password pair you provided is invalid");
+                    dialog.Show();
+                }
             };
 
             //Guest Login
