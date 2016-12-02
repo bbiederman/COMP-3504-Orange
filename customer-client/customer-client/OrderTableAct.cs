@@ -195,7 +195,7 @@ namespace customer_client
             //dialog1.Show();
 
             var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Delete menu item");
+            dialog.SetTitle("Delete Menu Item");
             dialog.SetMessage("Order Number:  " + selectedSt.ID + "\r\n" + "\r\n" + "Name:  " + selectedSt.foodName + "\r\n" + "Priced at:  $" + selectedSt.itemCost);
             dialog.SetPositiveButton("Delete",
                 (senderAlert, args) =>
@@ -206,7 +206,7 @@ namespace customer_client
                     total.Text = Convert.ToString(negaTotal(selectedSt.itemCost));
                 }
                 );
-            dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
+            dialog.SetNegativeButton("Cancel", (senderAlert, args) => { });
 
             dialog.Show();
             
@@ -274,8 +274,8 @@ namespace customer_client
 
             decimal theTotal = itemTotal(0);
                 var finishDialog = new AlertDialog.Builder(this);
-                finishDialog.SetTitle("Order Status");
-                finishDialog.SetMessage("Final Total:" + theTotal + " - Order Submitted.");
+                finishDialog.SetTitle("Finalize & Purchase Your Order");
+                finishDialog.SetMessage("Final Total:  $" + theTotal + "\r\n" + "\r\n"+"Order Submitted.");
               
 
 

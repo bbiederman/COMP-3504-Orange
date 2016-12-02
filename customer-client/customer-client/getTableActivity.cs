@@ -54,14 +54,52 @@ namespace customer_client
             //clickHandler();
             tableSubmit.Click += delegate
             {
-                //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
-                var resPick = new Android.Content.Intent(this, typeof(resSelectAct));
+
+                if (enterTableNumber.Text=="") {
+
+                    var dialog = new AlertDialog.Builder(this);
+                    dialog.SetTitle("There is no table number");
+                    dialog.SetMessage("how can we seat you then?");
+                    dialog.Show();
+
+
+
+                } else {
+
+
+                    bool isNumeric = true;
+                    foreach (char c in enterTableNumber.Text) {
+                        if (!Char.IsNumber(c)) {
+                            isNumeric = false;
+                            break;
+                        }
+
+                    }
+                        if (isNumeric) {
+
+  //var orderactivity = new Android.Content.Intent(this, typeof(OrderActivity));
+                    var resPick = new Android.Content.Intent(this, typeof(resSelectAct));
                 //extras here
 
                 string tableNumber = enterTableNumber.Text;
                 resPick.PutExtra("tableNumber", tableNumber);
-                StartActivity (resPick);
+                StartActivity (resPick);}else {
+                        var dialog = new AlertDialog.Builder(this);
+                        dialog.SetTitle("There is no table number");
+                        dialog.SetMessage("how can we seat you then?");
+                        dialog.Show();
+
+
+                    }
+
+
+
+                } 
+     
             };
+
+
+
 
             qrSubmit.Click += delegate
             {

@@ -54,7 +54,7 @@ namespace customer_client
             if (Intent.HasExtra("tableNumber"))
             {
                 //GetTableActivity.Window.SetTitle
-                this.Title = "Table: " + Intent.GetStringExtra("tableNumber");
+                this.Title = "Table Number:  " + Intent.GetStringExtra("tableNumber");
 
             }
 
