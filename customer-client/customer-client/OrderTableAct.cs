@@ -173,8 +173,9 @@ namespace customer_client
             menuItem selectedSt = theAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Item Info");
-            dialog.SetMessage("order number: "+selectedSt.ID + " " + selectedSt.foodName + " " + selectedSt.itemCost);
+            dialog.SetTitle("Item Information");
+            dialog.SetMessage("Order Number:  "+selectedSt.ID + "\r\n" + "\r\n" + "Name:  "+ selectedSt.foodName + "\r\n" + "Priced at:  $" + selectedSt.itemCost);
+        
             dialog.Show();
             
         }
@@ -195,7 +196,7 @@ namespace customer_client
 
             var dialog = new AlertDialog.Builder(this);
             dialog.SetTitle("Delete menu item");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName+" "+selectedSt.itemCost);
+            dialog.SetMessage("Order Number:  " + selectedSt.ID + "\r\n" + "\r\n" + "Name:  " + selectedSt.foodName + "\r\n" + "Priced at:  $" + selectedSt.itemCost);
             dialog.SetPositiveButton("Delete",
                 (senderAlert, args) =>
                 { // action for this button

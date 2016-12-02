@@ -112,8 +112,8 @@ namespace customer_client
             menuItem burger = new menuItem("Burger", "This is burger", "5.50", 2130837506);
             menuItem pizza = new menuItem("Pizza", "This is pizza", "5.00", 2130837515);
             menuItem pop = new menuItem("Pop", "This is pop","1.99", 2130837517);
-            menuItem water = new menuItem("Water:", "This is water", "2.00", 2130837518);
-            menuItem icecream = new menuItem("Ice Cream:", "This is ice cream","100.00", 2130837510);
+            menuItem water = new menuItem("Water", "This is water", "2.00", 2130837518);
+            menuItem icecream = new menuItem("Ice Cream", "This is ice cream","100.00", 2130837510);
 
 
             /*
