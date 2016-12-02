@@ -68,7 +68,7 @@ namespace customer_client
             string theTotal = Convert.ToString(itemTotal(0));
 
 
-            total.Text = theTotal;
+            total.Text = "Current Total is:  $" + theTotal;
             rando();
 
                 
@@ -267,12 +267,16 @@ namespace customer_client
             return totalPrice;
 
         }
+        public decimal completeTotal()
+        {
+            return totalPrice;
+        }
 
         MediaPlayer _player; //Soundplaying class variable
         //press the button plays the sound and provides the total, incomplete 
         private void completeOrder() {
 
-            decimal theTotal = itemTotal(0);
+            decimal theTotal = completeTotal();
                 var finishDialog = new AlertDialog.Builder(this);
                 finishDialog.SetTitle("Finalize & Purchase Your Order");
                 finishDialog.SetMessage("Final Total:  $" + theTotal + "\r\n" + "\r\n"+"Order Submitted.");
@@ -283,9 +287,10 @@ namespace customer_client
 
                 finishDialog.Show();
 
-                total.Text = "Current Total is" + theTotal;
+            // total.Text = "Current Total is " + theTotal;
+            total.Text = "Current Total is being submitted";
 
-                _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
+            _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
                 _player.Start();
             //play sound
 
