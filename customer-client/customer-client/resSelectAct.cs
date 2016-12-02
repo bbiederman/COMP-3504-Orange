@@ -33,11 +33,26 @@ namespace customer_client
 
             if (Intent.HasExtra("tableNumber"))
             {
-                //GetTableActivity.Window.SetTitle
-                tableNum = Intent.GetStringExtra("tableNumber");
+
+                if (Intent.GetStringExtra("tableNumber") != null)
+                {
+                    //GetTableActivity.Window.SetTitle
+
+                    tableNum = Intent.GetStringExtra("tableNumber");
+                }
+                else {
+
+                    tableNum = "Unknown";
+
+
+
+
+                }
+
+
 
             }
-            else { tableNum = "poop"; }
+            else if(Intent.GetStringExtra("tableNumber")=="") { tableNum = "Unknown"; }
 
 
 

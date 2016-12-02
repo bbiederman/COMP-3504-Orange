@@ -68,7 +68,7 @@ namespace customer_client
             string theTotal = Convert.ToString(itemTotal(0));
 
 
-            total.Text = theTotal;
+            total.Text = "Current Total is:  $" + theTotal;
             rando();
 
                 
@@ -173,8 +173,9 @@ namespace customer_client
             menuItem selectedSt = theAdapter[e.Position];
 
             var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Item Info");
-            dialog.SetMessage("order number: "+selectedSt.ID + " " + selectedSt.foodName + " " + selectedSt.itemCost);
+            dialog.SetTitle("Item Information");
+            dialog.SetMessage("Order Number:  "+selectedSt.ID + "\r\n" + "\r\n" + "Name:  "+ selectedSt.foodName + "\r\n" + "Priced at:  $" + selectedSt.itemCost);
+        
             dialog.Show();
             
         }
@@ -194,8 +195,8 @@ namespace customer_client
             //dialog1.Show();
 
             var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Delete menu item");
-            dialog.SetMessage(selectedSt.ID + " " + selectedSt.foodName+" "+selectedSt.itemCost);
+            dialog.SetTitle("Delete Menu Item");
+            dialog.SetMessage("Order Number:  " + selectedSt.ID + "\r\n" + "\r\n" + "Name:  " + selectedSt.foodName + "\r\n" + "Priced at:  $" + selectedSt.itemCost);
             dialog.SetPositiveButton("Delete",
                 (senderAlert, args) =>
                 { // action for this button
@@ -205,7 +206,7 @@ namespace customer_client
                     total.Text = Convert.ToString(negaTotal(selectedSt.itemCost));
                 }
                 );
-            dialog.SetNegativeButton("cancel", (senderAlert, args) => { });
+            dialog.SetNegativeButton("Cancel", (senderAlert, args) => { });
 
             dialog.Show();
             
@@ -266,15 +267,19 @@ namespace customer_client
             return totalPrice;
 
         }
+        public decimal completeTotal()
+        {
+            return totalPrice;
+        }
 
         MediaPlayer _player; //Soundplaying class variable
         //press the button plays the sound and provides the total, incomplete 
         private void completeOrder() {
 
-            decimal theTotal = itemTotal(0);
+            decimal theTotal = completeTotal();
                 var finishDialog = new AlertDialog.Builder(this);
-                finishDialog.SetTitle("Order Status");
-                finishDialog.SetMessage("Final Total:" + theTotal + " - Order Submitted.");
+                finishDialog.SetTitle("Finalize & Purchase Your Order");
+                finishDialog.SetMessage("Final Total:  $" + theTotal + "\r\n" + "\r\n"+"Order Submitted.");
               
 
 
@@ -282,9 +287,10 @@ namespace customer_client
 
                 finishDialog.Show();
 
-                total.Text = "Current Total is" + theTotal;
+            // total.Text = "Current Total is " + theTotal;
+            total.Text = "Current Total is being submitted";
 
-                _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
+            _player = MediaPlayer.Create(this, Resource.Drawable.BasicDing);
                 _player.Start();
             //play sound
 
