@@ -26,9 +26,6 @@ namespace customer_client
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::customer_client.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::customer_client.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::customer_client.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -123,9 +120,6 @@ namespace customer_client
 			// aapt resource value: 0x7f05001c
 			public const int backToMenu = 2131034140;
 			
-			// aapt resource value: 0x7f050021
-			public const int contentFrame = 2131034145;
-			
 			// aapt resource value: 0x7f050002
 			public const int description = 2131034114;
 			
@@ -137,6 +131,9 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f050008
 			public const int enterTableNumber = 2131034120;
+			
+			// aapt resource value: 0x7f050014
+			public const int facebook = 2131034132;
 			
 			// aapt resource value: 0x7f050000
 			public const int foodName = 2131034112;
@@ -152,9 +149,6 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f050001
 			public const int image = 2131034113;
-			
-			// aapt resource value: 0x7f050014
-			public const int imageButton1 = 2131034132;
 			
 			// aapt resource value: 0x7f05000a
 			public const int imageView1 = 2131034122;
@@ -243,12 +237,6 @@ namespace customer_client
 			
 			// aapt resource value: 0x7f030007
 			public const int resSelect = 2130903047;
-			
-			// aapt resource value: 0x7f030008
-			public const int zxingscanneractivitylayout = 2130903048;
-			
-			// aapt resource value: 0x7f030009
-			public const int zxingscannerfragmentlayout = 2130903049;
 			
 			static Layout()
 			{

@@ -12,6 +12,7 @@ namespace customer_client
         private EditText emailAddress;
         private EditText password;
         private Button guestLogin;
+        private ImageButton facebook;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -53,6 +54,16 @@ namespace customer_client
             {
                 //Skips validation, submits w/ guest username
                 submit("Guest@test.com");
+            };
+
+            //Facebook Login
+            facebook.Click += delegate
+            {
+                //Feature not available dialog
+                var dialog = new AlertDialog.Builder(this);
+                dialog.SetTitle("Not Available");
+                dialog.SetMessage("This feature is still in development");
+                dialog.Show();
             };
         }
 
@@ -109,6 +120,7 @@ namespace customer_client
             emailAddress = FindViewById<EditText>(Resource.Id.emailAddress);
             password = FindViewById<EditText>(Resource.Id.password);
             guestLogin = FindViewById<Button>(Resource.Id.guestLogin);
+            facebook = FindViewById<ImageButton>(Resource.Id.facebook);
             //throw new NotImplementedException();//
         }
     }
