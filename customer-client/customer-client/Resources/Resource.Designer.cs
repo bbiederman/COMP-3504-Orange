@@ -121,25 +121,31 @@ namespace customer_client
 			public const int QBLogo = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int soda = 2130837523;
+			public const int rodneysCafe = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int steakFrites = 2130837524;
+			public const int soda = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int strawberryMousse = 2130837525;
+			public const int steakFrites = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int tunaTataki = 2130837526;
+			public const int strawberryMousse = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int twoOneBurger = 2130837527;
+			public const int tunaTataki = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int waffleBurger = 2130837528;
+			public const int twoOneBistro = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int water = 2130837529;
+			public const int twoOneBurger = 2130837529;
+			
+			// aapt resource value: 0x7f02001a
+			public const int waffleBurger = 2130837530;
+			
+			// aapt resource value: 0x7f02001b
+			public const int water = 2130837531;
 			
 			static Drawable()
 			{
@@ -166,17 +172,20 @@ namespace customer_client
 			// aapt resource value: 0x7f070004
 			public const int addButton = 2131165188;
 			
-			// aapt resource value: 0x7f070019
-			public const int backToMenu = 2131165209;
+			// aapt resource value: 0x7f07001a
+			public const int backToMenu = 2131165210;
 			
-			// aapt resource value: 0x7f07001e
-			public const int contentFrame = 2131165214;
+			// aapt resource value: 0x7f070018
+			public const int callWaiter = 2131165208;
+			
+			// aapt resource value: 0x7f07001f
+			public const int contentFrame = 2131165215;
 			
 			// aapt resource value: 0x7f070002
 			public const int description = 2131165186;
 			
-			// aapt resource value: 0x7f07001b
-			public const int dingBut = 2131165211;
+			// aapt resource value: 0x7f07001c
+			public const int dingBut = 2131165212;
 			
 			// aapt resource value: 0x7f07000f
 			public const int emailAddress = 2131165199;
@@ -214,8 +223,8 @@ namespace customer_client
 			// aapt resource value: 0x7f070013
 			public const int login = 2131165203;
 			
-			// aapt resource value: 0x7f070018
-			public const int orderTable = 2131165208;
+			// aapt resource value: 0x7f070019
+			public const int orderTable = 2131165209;
 			
 			// aapt resource value: 0x7f070011
 			public const int password = 2131165201;
@@ -226,11 +235,11 @@ namespace customer_client
 			// aapt resource value: 0x7f070005
 			public const int relativeLayout1 = 2131165189;
 			
-			// aapt resource value: 0x7f07001c
-			public const int res1But = 2131165212;
-			
 			// aapt resource value: 0x7f07001d
-			public const int res2But = 2131165213;
+			public const int res1But = 2131165213;
+			
+			// aapt resource value: 0x7f07001e
+			public const int res2But = 2131165214;
 			
 			// aapt resource value: 0x7f070009
 			public const int tableSubmit = 2131165193;
@@ -241,8 +250,8 @@ namespace customer_client
 			// aapt resource value: 0x7f070010
 			public const int textView2 = 2131165200;
 			
-			// aapt resource value: 0x7f07001a
-			public const int total = 2131165210;
+			// aapt resource value: 0x7f07001b
+			public const int total = 2131165211;
 			
 			// aapt resource value: 0x7f070017
 			public const int viewOrder = 2131165207;

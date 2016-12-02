@@ -24,6 +24,7 @@ namespace customer_client
         private adapter theAdapter;
 
         private Button viewOrder;
+        private Button callWaiter;
         //private Button addItemButton;
         //private EditText itemNameEditText;
 
@@ -62,11 +63,7 @@ namespace customer_client
             
             
 
-            //Resource.Drawable.water;
-
-
-            
-
+            //Resource.Drawable.waffleBurger;
            
             int holder = 0;
             if (Intent.HasExtra("resId") && Intent.GetIntExtra("resId", holder) == 1)
@@ -75,7 +72,7 @@ namespace customer_client
                 menuItem chickenTacos = new menuItem("Chicken tacos", "Poblano avacoado aioli, roma tomatoes, microgreens, brocolli slaw, shishito peppers, mango salsa", "13.00", 2130837507);
                 menuItem lobsterCake = new menuItem("Lobster Cakes", "Chili Remoulade, Roaster peppers", "14.25", 2130837515);
                 menuItem pasta = new menuItem("Creamy Pesto Penne", "Bechamel, proscioutto, chicken, tomato ", "18.50", 2130837519);
-                menuItem twoOneBurger = new menuItem("Two one Burger", "Mayo, Dijon, Arugala, roma tomatoes, onion, jam, pickles, aged cheddar, maple peppered bacon, brioche bun", "15.50", 2130837527);
+                menuItem twoOneBurger = new menuItem("Two one Burger", "Mayo, Dijon, Arugala, roma tomatoes, onion, jam, pickles, aged cheddar, maple peppered bacon, brioche bun", "15.50", 2130837529);
 
 
                 menuList = new List<menuItem>();
@@ -88,11 +85,11 @@ namespace customer_client
 
             if (Intent.HasExtra("resId") && Intent.GetIntExtra("resId", holder) == 2)
             {
-                menuItem strawberryMousse = new menuItem("Strawberry Mousse", "A creamy strawberry based served with a fresh cut strawberry in the glass of your choice", "18.00", 2130837525);
+                menuItem strawberryMousse = new menuItem("Strawberry Mousse", "A creamy strawberry based served with a fresh cut strawberry in the glass of your choice", "18.00", 2130837526);
                 menuItem tenderloin = new menuItem("Tenderloin", "A delicious tenderloin steak, served with house seasoning on top of grilled vegetables", "22.00", 2130837521);
-                menuItem steakFrites = new menuItem("Steak Frites", "A juicy high grade steak, served with microgreens, and cheesy frites", "18.00", 2130837524);
-                menuItem tunaTataki = new menuItem("Tuna Tataki", "A savoury smoked tuna served with a light and spicy manga sala", "15.00", 2130837526);
-                menuItem goudaBurger = new menuItem("Gouda Burger", "A colourful pink waffle burger, served with gouda cheese and the toppings of your choice", "14.00", 2130837528);
+                menuItem steakFrites = new menuItem("Steak Frites", "A juicy high grade steak, served with microgreens, and cheesy frites", "18.00", 2130837525);
+                menuItem tunaTataki = new menuItem("Tuna Tataki", "A savoury smoked tuna served with a light and spicy manga sala", "15.00", 2130837527);
+                menuItem goudaBurger = new menuItem("Gouda Burger", "A colourful pink waffle burger, served with gouda cheese and the toppings of your choice", "14.00", 2130837530);
 
 
 
@@ -118,6 +115,7 @@ namespace customer_client
         {
             itemListView = FindViewById<ListView>(Resource.Id.itemListView);
             viewOrder = FindViewById<Button>(Resource.Id.viewOrder);
+            callWaiter = FindViewById<Button>(Resource.Id.callWaiter);
             //addItemButton = FindViewById<Button>(Resource.Id.addItemButton);
             //itemNameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
         }
@@ -142,23 +140,17 @@ namespace customer_client
             itemListView.FastScrollEnabled = true;
 
             itemListView.ItemClick += itemListView_ItemClick;
-           // itemListView.ItemLongClick += itemListView_ItemLongClick;
 
+            callWaiter.Click += callWaiter_Click;
 
-            //addItemButton.Click += AddItemButton_Click;
+        }
 
-
-            //set up addapter for list view 
-            //stAdapter = new adapter(this);
-            //if (stAdapter is adapter)
-            //{
-            //   itemNameEditText.Text = "True";
-            //}
-            //itemListView.Adapter = stAdapter;
-            //itemListView.FastScrollEnabled = true;
-
-            //itemListView.ItemClick += itemListView_ItemClick;
-            //itemListView.ItemLongClick += itemListView_ItemLongClick;
+        private void callWaiter_Click(object sender, EventArgs e)
+        {
+            var dialog = new AlertDialog.Builder(this);
+            dialog.SetTitle("Ping Sent");
+            dialog.SetMessage("A waiter will be there shortly");
+            dialog.Show();
         }
 
         private void ViewOrder_Click(object sender, EventArgs e)

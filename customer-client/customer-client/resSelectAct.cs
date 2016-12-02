@@ -17,8 +17,8 @@ namespace customer_client
     {
         private int resId;
         private string tableNum = "";
-        private Button select_res1;
-        private Button select_res2;
+        private ImageButton select_res1;
+        private ImageButton select_res2;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -90,8 +90,8 @@ namespace customer_client
 
         private void loadViews()
         {
-            select_res1 = FindViewById<Button>(Resource.Id.res1But);
-            select_res2 = FindViewById<Button>(Resource.Id.res2But);
+            select_res1 = FindViewById<ImageButton>(Resource.Id.res1But);
+            select_res2 = FindViewById<ImageButton>(Resource.Id.res2But);
         }
 
     }

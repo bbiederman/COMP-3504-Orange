@@ -203,7 +203,7 @@ namespace customer_client
                     data.deleteItemByID(selectedSt.ID);
                     theAdapter.NotifyDataSetChanged();
                     Toast.MakeText(this, "The menu item has been deleted", ToastLength.Short).Show();
-                    total.Text = Convert.ToString(negaTotal(selectedSt.itemCost));
+                    total.Text = Convert.ToString("Total: $"+negaTotal(selectedSt.itemCost));
                 }
                 );
             dialog.SetNegativeButton("Cancel", (senderAlert, args) => { });

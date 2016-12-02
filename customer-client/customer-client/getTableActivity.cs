@@ -58,8 +58,8 @@ namespace customer_client
                 if (enterTableNumber.Text=="") {
 
                     var dialog = new AlertDialog.Builder(this);
-                    dialog.SetTitle("There is no table number");
-                    dialog.SetMessage("how can we seat you then?");
+                    dialog.SetTitle("No table number entered");
+                    dialog.SetMessage("Please try again");
                     dialog.Show();
 
 
