@@ -22,10 +22,6 @@ namespace customer_client
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
-
-
-
-
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.resSelect);
@@ -43,18 +39,9 @@ namespace customer_client
                 else {
 
                     tableNum = "Unknown";
-
-
-
-
                 }
-
-
-
-            }
+         }
             else if(Intent.GetStringExtra("tableNumber")=="") { tableNum = "Unknown"; }
-
-
 
             loadViews();
 
@@ -62,21 +49,7 @@ namespace customer_client
             select_res1.Click += Res1Click;
             select_res2.Click += Res2Click;
 
-
-
-
-         
-
-
-
-
-
             //butFunction();
-
-
-
-
-
 
         }
 

@@ -30,6 +30,7 @@ namespace customer_client
         private List<string> testFoodItems;
 
         private List<menuItem> menuList;
+      
 
 
 
@@ -58,109 +59,55 @@ namespace customer_client
 
             }
 
-
-
-
-
-
-
-
-
-
-            /*menuItem burger = new menuItem();
-            burger.foodName = "Burger";
-            burger.foodDescription = "This is burger";
-            burger.imageID = 2130837506;*/
+            
+            
 
             //Resource.Drawable.water;
 
-            //decimal pizza1 = 9.56m;
+
+            
+
+           
+            int holder = 0;
+            if (Intent.HasExtra("resId") && Intent.GetIntExtra("resId", holder) == 1)
+            {
+                menuItem glazedGingerBeef = new menuItem("Glazed Ginger Beef", "Candied shishito peppers, crisp ramen, poblano avacoado aioli, mango salsa", "14.50", 2130837512);
+                menuItem chickenTacos = new menuItem("Chicken tacos", "Poblano avacoado aioli, roma tomatoes, microgreens, brocolli slaw, shishito peppers, mango salsa", "13.00", 2130837507);
+                menuItem lobsterCake = new menuItem("Lobster Cakes", "Chili Remoulade, Roaster peppers", "14.25", 2130837515);
+                menuItem pasta = new menuItem("Creamy Pesto Penne", "Bechamel, proscioutto, chicken, tomato ", "18.50", 2130837519);
+                menuItem twoOneBurger = new menuItem("Two one Burger", "Mayo, Dijon, Arugala, roma tomatoes, onion, jam, pickles, aged cheddar, maple peppered bacon, brioche bun", "15.50", 2130837527);
+
+
+                menuList = new List<menuItem>();
+                menuList.Add(glazedGingerBeef);
+                menuList.Add(chickenTacos);
+                menuList.Add(lobsterCake);
+                menuList.Add(pasta);
+                menuList.Add(twoOneBurger);
+            }
+
+            if (Intent.HasExtra("resId") && Intent.GetIntExtra("resId", holder) == 2)
+            {
+                menuItem strawberryMousse = new menuItem("Strawberry Mousse", "A creamy strawberry based served with a fresh cut strawberry in the glass of your choice", "18.00", 2130837525);
+                menuItem tenderloin = new menuItem("Tenderloin", "A delicious tenderloin steak, served with house seasoning on top of grilled vegetables", "22.00", 2130837521);
+                menuItem steakFrites = new menuItem("Steak Frites", "A juicy high grade steak, served with microgreens, and cheesy frites", "18.00", 2130837524);
+                menuItem tunaTataki = new menuItem("Tuna Tataki", "A savoury smoked tuna served with a light and spicy manga sala", "15.00", 2130837526);
+                menuItem goudaBurger = new menuItem("Gouda Burger", "A colourful pink waffle burger, served with gouda cheese and the toppings of your choice", "14.00", 2130837528);
 
 
 
-            /*
+                menuList = new List<menuItem>();
+                menuList.Add(strawberryMousse);
+                menuList.Add(tenderloin);
+                menuList.Add(steakFrites);
+                menuList.Add(tunaTataki);
+                menuList.Add(goudaBurger);
+            }
 
-           if (Intent.GetIntExtra("resId",1)==1)
-           {
-               menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
-               menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
-               menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
-               menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
-               menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
-               //menuItem fries = new menuItem("Fries", "This is Fries", 1.50m, 2130837515);
-           }
-           else {
-
-               menuItem burger = new menuItem("Burger", "This is burger", 5.50m, 2130837506);
-               menuItem pizza = new menuItem("Pizza", "This is pizza", 9.56m, 2130837514);
-               menuItem pop = new menuItem("Pop", "This is pop", 1.99m, 2130837515);
-               menuItem water = new menuItem("Water", "This is water", 1.50m, 2130837516);
-               menuItem icecream = new menuItem("Ice Cream", "This is ice cream", 1.50m, 2130837510);
-
-
-           }
-           */
-
-            // menuItem burger = new menuItem("Burger:", "This is burger", 5.50m, 2130837506);
-            // menuItem pizza = new menuItem("Pizza:", "This is pizza", 9.56m, 2130837514);
-            //menuItem pop = new menuItem("Pop:", "This is pop", 1.99m, 2130837515);
-            //menuItem water = new menuItem("Water:", "This is water", 1.50m, 2130837516);
-            // menuItem icecream = new menuItem("Ice Cream:", "This is ice cream", 1.50m, 2130837510);
-
-            //Resource.Drawable.water;
-
-            menuItem burger = new menuItem("Burger", "This is burger", "5.50", 2130837506);
-            menuItem pizza = new menuItem("Pizza", "This is pizza", "5.00", 2130837515);
-            menuItem pop = new menuItem("Pop", "This is pop","1.99", 2130837517);
-            menuItem water = new menuItem("Water", "This is water", "2.00", 2130837518);
-            menuItem icecream = new menuItem("Ice Cream", "This is ice cream","100.00", 2130837510);
-
-
-            /*
-            //menuItem pizza = new menuItem();
-            pizza.foodName = "Pizza";
-            pizza.foodDescription = "This is pizza";
-            pizza.imageID = 2130837513;*/
-
-            /*menuItem pop = new menuItem();
-             pop.foodName = "Pop";
-             pop.foodDescription = "This is pop";
-             pop.imageID = 2130837514;*/
-
-
-
-            menuList = new List<menuItem>();
-             menuList.Add(burger);
-            menuList.Add(pop);
-            menuList.Add(pizza);
-            menuList.Add(water);
-            menuList.Add(icecream);
-            //menuList.Add(fries);
-
-
-
-            /*
-            testFoodItems = new List<Tuple<string, int>>();
-             testFoodItems.Add(new Tuple<string, int>("Pizza", Resource.Drawable.Icon));
-             testFoodItems.Add(new Tuple<string, int>("Burger", Resource.Drawable.Icon));
-             testFoodItems.Add(new Tuple<string, int>("Pop", Resource.Drawable.Icon));
-             testFoodItems.Add(new Tuple<string, int>("Water", Resource.Drawable.Icon));
-             */
+                
 
             connectActions();
 
-            
-
-            
-
-            //itemListView.ItemsSource = new string[]
-            //{
-            //    "test",
-            //    "test2"
-            //};
-
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
         }
 
 

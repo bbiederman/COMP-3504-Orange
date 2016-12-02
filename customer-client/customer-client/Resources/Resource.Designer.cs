@@ -166,26 +166,26 @@ namespace customer_client
 			// aapt resource value: 0x7f070004
 			public const int addButton = 2131165188;
 			
-			// aapt resource value: 0x7f07001a
-			public const int addItemButton = 2131165210;
+			// aapt resource value: 0x7f070019
+			public const int backToMenu = 2131165209;
 			
-			// aapt resource value: 0x7f07001c
-			public const int backToMenu = 2131165212;
-			
-			// aapt resource value: 0x7f070021
-			public const int contentFrame = 2131165217;
+			// aapt resource value: 0x7f07001e
+			public const int contentFrame = 2131165214;
 			
 			// aapt resource value: 0x7f070002
 			public const int description = 2131165186;
 			
-			// aapt resource value: 0x7f07001e
-			public const int dingBut = 2131165214;
+			// aapt resource value: 0x7f07001b
+			public const int dingBut = 2131165211;
 			
 			// aapt resource value: 0x7f07000f
 			public const int emailAddress = 2131165199;
 			
 			// aapt resource value: 0x7f070008
 			public const int enterTableNumber = 2131165192;
+			
+			// aapt resource value: 0x7f070014
+			public const int facebook = 2131165204;
 			
 			// aapt resource value: 0x7f070000
 			public const int foodName = 2131165184;
@@ -202,17 +202,11 @@ namespace customer_client
 			// aapt resource value: 0x7f070001
 			public const int image = 2131165185;
 			
-			// aapt resource value: 0x7f070014
-			public const int imageButton1 = 2131165204;
-			
 			// aapt resource value: 0x7f07000a
 			public const int imageView1 = 2131165194;
 			
 			// aapt resource value: 0x7f070016
 			public const int itemListView = 2131165206;
-			
-			// aapt resource value: 0x7f070018
-			public const int label = 2131165208;
 			
 			// aapt resource value: 0x7f070015
 			public const int linearLayout1 = 2131165205;
@@ -220,11 +214,8 @@ namespace customer_client
 			// aapt resource value: 0x7f070013
 			public const int login = 2131165203;
 			
-			// aapt resource value: 0x7f070019
-			public const int nameEditText = 2131165209;
-			
-			// aapt resource value: 0x7f07001b
-			public const int orderTable = 2131165211;
+			// aapt resource value: 0x7f070018
+			public const int orderTable = 2131165208;
 			
 			// aapt resource value: 0x7f070011
 			public const int password = 2131165201;
@@ -235,11 +226,11 @@ namespace customer_client
 			// aapt resource value: 0x7f070005
 			public const int relativeLayout1 = 2131165189;
 			
-			// aapt resource value: 0x7f07001f
-			public const int res1But = 2131165215;
+			// aapt resource value: 0x7f07001c
+			public const int res1But = 2131165212;
 			
-			// aapt resource value: 0x7f070020
-			public const int res2But = 2131165216;
+			// aapt resource value: 0x7f07001d
+			public const int res2But = 2131165213;
 			
 			// aapt resource value: 0x7f070009
 			public const int tableSubmit = 2131165193;
@@ -250,8 +241,8 @@ namespace customer_client
 			// aapt resource value: 0x7f070010
 			public const int textView2 = 2131165200;
 			
-			// aapt resource value: 0x7f07001d
-			public const int total = 2131165213;
+			// aapt resource value: 0x7f07001a
+			public const int total = 2131165210;
 			
 			// aapt resource value: 0x7f070017
 			public const int viewOrder = 2131165207;
@@ -285,19 +276,16 @@ namespace customer_client
 			public const int menuOrder = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int menuOrderBak = 2130903045;
+			public const int orderTable = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int orderTable = 2130903046;
+			public const int resSelect = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int resSelect = 2130903047;
+			public const int zxingscanneractivitylayout = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int zxingscanneractivitylayout = 2130903048;
-			
-			// aapt resource value: 0x7f030009
-			public const int zxingscannerfragmentlayout = 2130903049;
+			public const int zxingscannerfragmentlayout = 2130903048;
 			
 			static Layout()
 			{
