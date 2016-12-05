@@ -19,6 +19,7 @@ namespace customer_client
         private string tableNum = "";
         private ImageButton select_res1;
         private ImageButton select_res2;
+        private SearchView searchView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -48,6 +49,7 @@ namespace customer_client
 
             select_res1.Click += Res1Click;
             select_res2.Click += Res2Click;
+            
 
             //butFunction();
 
@@ -92,6 +94,7 @@ namespace customer_client
         {
             select_res1 = FindViewById<ImageButton>(Resource.Id.res1But);
             select_res2 = FindViewById<ImageButton>(Resource.Id.res2But);
+            searchView = FindViewById<SearchView>(Resource.Id.searchView1);
         }
 
     }

@@ -178,8 +178,8 @@ namespace customer_client
 			// aapt resource value: 0x7f070018
 			public const int callWaiter = 2131165208;
 			
-			// aapt resource value: 0x7f07001f
-			public const int contentFrame = 2131165215;
+			// aapt resource value: 0x7f070020
+			public const int contentFrame = 2131165216;
 			
 			// aapt resource value: 0x7f070002
 			public const int description = 2131165186;
@@ -235,11 +235,14 @@ namespace customer_client
 			// aapt resource value: 0x7f070005
 			public const int relativeLayout1 = 2131165189;
 			
-			// aapt resource value: 0x7f07001d
-			public const int res1But = 2131165213;
-			
 			// aapt resource value: 0x7f07001e
-			public const int res2But = 2131165214;
+			public const int res1But = 2131165214;
+			
+			// aapt resource value: 0x7f07001f
+			public const int res2But = 2131165215;
+			
+			// aapt resource value: 0x7f07001d
+			public const int searchView1 = 2131165213;
 			
 			// aapt resource value: 0x7f070009
 			public const int tableSubmit = 2131165193;
