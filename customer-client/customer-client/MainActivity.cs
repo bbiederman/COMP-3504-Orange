@@ -61,8 +61,8 @@ namespace customer_client
             {
                 //Feature not available dialog
                 var dialog = new AlertDialog.Builder(this);
-                dialog.SetTitle("Not Available");
-                dialog.SetMessage("This feature is still in development");
+                dialog.SetTitle("Functionality in Development");
+                dialog.SetMessage("Currently unavailable");
                 dialog.Show();
             };
         }
