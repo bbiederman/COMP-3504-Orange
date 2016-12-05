@@ -49,7 +49,7 @@ namespace customer_client
 
             select_res1.Click += Res1Click;
             select_res2.Click += Res2Click;
-            
+            searchView.MenuItemClick += textDisplay;
 
             //butFunction();
 
@@ -88,6 +88,22 @@ namespace customer_client
 
 
         }
+
+        public void textDisplay(object sender, EventArgs e) {
+            var message = new AlertDialog.Builder(this);
+            message.SetTitle("hello");
+            message.Show();
+
+
+
+
+
+        }
+
+
+
+
+
 
 
         private void loadViews()
